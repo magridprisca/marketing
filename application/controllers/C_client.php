@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class C_client extends CI_Controller {
 	public function __construct(){
 		parent::__construct();
-
+		$this->load->model('M_client');
 	}
 
 	public function index()
@@ -20,10 +20,17 @@ class C_client extends CI_Controller {
 			$data['pelanggan']='client';
 			$this->load->view('pages/admin/V_clientForm');
 		}else{
-			$data['err_message']="Data client kosong!";
-			$this->load->view('pages/admin/V_clientForm');
-
+			$data = array(
+				'clientCode'		=> set_value('client_code'),
+				'clientName'		=> set_value('client_name')
+			);
+			$res=$this->M_client->create($data);
+			redirect(base_url('pages/admin/V_clientForm'));
 		}
+	}
+
+	public function getAll(){
+
 	}
 }
 ?>

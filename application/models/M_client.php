@@ -5,7 +5,7 @@ class M_client extends CI_Model{
 	}
 
 	public function getAll(){
-		$hasil = $this->db->where('knowledge.userID=user.userID')->get('knowledge,user');
+		$hasil = $this->db->where('client.client_code=project.clientID')->get('client,project');
 		if($hasil->num_rows() > 0){
 			return $hasil->result();
 		}else {
@@ -15,11 +15,12 @@ class M_client extends CI_Model{
 
 	public function create($data){
 	$this->db->insert('client', $data);
-}
-public function update($id, $data){
-	$this->db->where('client',$id)->update('client',$data);
-}
-public function delete($id){
-	$this->db->where('client',$id)->delete('client');
+	}
+	public function update($id, $data){
+		$this->db->where('client',$id)->update('client',$data);
+	}
+	public function delete($id){
+		$this->db->where('client',$id)->delete('client');
+	}
 }
 ?>
