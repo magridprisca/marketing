@@ -296,7 +296,7 @@
       <!-- sidebar: style can be found in sidebar.less -->
       <section class="sidebar">
         <ul class="sidebar-menu" data-widget="tree">
-          <?php $this->load->view('menus/main');?>
+          <?php $this->load->view('menus/V_main_admin');?>
         </ul>
       </section>
       <!-- /.sidebar -->
