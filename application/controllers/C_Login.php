@@ -21,10 +21,10 @@ class C_Login extends CI_Controller {
 
 		if ($isLogin == true && $i[0]['authentication'] < 3) {
 			$newdata = array(
-			'user'	=> $i[0]['userID'],
+			'user'	=> $i[0]['username'],
 			'nama'	=> $i[0]['name'],
-			'poto'	=> $i[0]['userPhoto'],
-			'level'	=> $i[0]['level']
+      'email'	=> $i[0]['email'],
+			'status'	=> 'Login'
 			);
 			$this->session->set_userdata($newdata);
 			$this->M_user->wrong_password($username, 0);
