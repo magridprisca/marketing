@@ -20,18 +20,18 @@
           <form role="form" id="formInput" method="post"action="<?= base_url('C_client/addClient') ?>">
             <div class="box-body">
               <div class="form-group">
-                <label for="exampleInputEmail1">Client code</label>
-                <input class="form-control" id="clientCode" placeholder="Client code">
+                <label for="code">Client code<span classs="required">*</span></label>
+                <input class="form-control" id="clientCode" name="clientCode" placeholder="Client code">
               </div>
               <div class="form-group">
-                <label for="exampleInputPassword1">Name</label>
-                <input class="form-control" id="clientName" placeholder="Client name">
+                <label for="name">Name<span classs="required">*</span></label>
+                <input class="form-control" id="clientName" name="clientName" placeholder="Client name">
               </div>
             </div>
             <!-- /.box-body -->
             <div class="box-footer">
               <button type="button" id="btnTutup" class="btn btn-default">Cancel</button>
-              <button id="btnSimpan" type= "submit" class="btn btn-primary pull-right">Save</button>
+              <button id="btnSimpan" type= "submitn" class="btn btn-primary pull-right">Save</button>
             </div>
           </form>
         </div>

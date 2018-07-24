@@ -13,12 +13,21 @@ class M_client extends CI_Model{
 		}
 	}
 
-	public function create($data){
-<<<<<<< HEAD
-	$this->db->insert('client', $data);
-=======
-		$this->db->insert('client', $data);
->>>>>>> 720400479694d55d44538385528c10e6ca11817e
+	public function getperProject($code){
+		$hasil = $this->db->where('client.client_code=project.clientID and client.client_code="'.$code.'"')->get('client, project');
+		if($hasil->num_rows() > 0){
+			return $hasil->result();
+		}else {
+			return array();
+		}
+	}
+
+	public function create(){
+	$data = array(
+		'client_code' => $this->input->post('clientCode'),
+		'client_name' => $this->input->post('clientName')
+	);
+	return  $this->db->insert('client', $data);
 	}
 	public function update($id, $data){
 		$this->db->where('client',$id)->update('client',$data);
@@ -26,8 +35,5 @@ class M_client extends CI_Model{
 	public function delete($id){
 		$this->db->where('client',$id)->delete('client');
 	}
-<<<<<<< HEAD
 }
-=======
->>>>>>> 720400479694d55d44538385528c10e6ca11817e
 ?>
