@@ -12,8 +12,8 @@
     </span>
   </a>
   <ul class="treeview-menu">
-    <li><a href="index.html"><i class="fa fa-circle-o"></i> Add New Project</a></li>
-    <li class="active"><a href="index2.html"><i class="fa fa-circle-o"></i> Process Project</a></li>
+    <li class="active"><a href="<?= base_url('C_Project/addProject');?>"><i class="fa fa-circle-o"></i> Add New Project</a></li>
+    <li class="active"><a href="<?= base_url('C_Project');?>"><i class="fa fa-circle-o"></i> Process Project</a></li>
   </ul>
 </li>
 <li>
