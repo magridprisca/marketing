@@ -23,6 +23,7 @@ class C_client extends CI_Controller {
 		if($this->form_validation->run() == FALSE){
 			$data['pelanggan']="client";
 			$this->load->view('pages/admin/V_clientForm', $data);
+			$this->load->view('templates/footer');
 		}else{
 			$this->load->model('M_client');
 			$this->M_client->create();
