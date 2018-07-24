@@ -23,20 +23,20 @@ class M_client extends CI_Model{
 	}
 
 	public function findDetail($id){
-    $hasil = $this->db->where('client_code',$id)->limit(1)->get('client');
+    		$hasil = $this->db->where('client_code',$id)->limit(1)->get('client');
 		if($hasil->num_rows() > 0){
 			return $hasil->row();
 		}else {
 			return array();
 		}
-  }
+  	}
 
 	public function create(){
-	$data = array(
-		'client_code' => $this->input->post('clientCode'),
-		'client_name' => $this->input->post('clientName')
-	);
-	return  $this->db->insert('client', $data);
+		$data = array(
+			'client_code' => $this->input->post('clientCode'),
+			'client_name' => $this->input->post('clientName')
+		);
+		return  $this->db->insert('client', $data);
 	}
 	
 	public function update($id, $data){
