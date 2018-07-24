@@ -9,11 +9,10 @@
     <!-- Add new clinet-->
     <section class="content">
       <div class="row">
-        <div class="col-md-12">
+        <div class="col-lg-12">
           <div class="box">
             <div class="box-header with-border">
               <h3 class="box-title">Datatable List</h3>
-
               <div class="box-tools pull-right">
                 <button type="button" id="btnTambah" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i><a href = 'C_client/addClient'>Tambah</button>
               </div>

@@ -13,14 +13,23 @@ class M_client extends CI_Model{
 		}
 	}
 
-	public function getperProject($code){
-		$hasil = $this->db->where('client.client_code=project.clientID and client.client_code="'.$code.'"')->get('client, project');
+	public function getperProject(){
+		$hasil = $this->db->where('client.client_code=project.clientID')->get('client, project');
 		if($hasil->num_rows() > 0){
 			return $hasil->result();
 		}else {
 			return array();
 		}
 	}
+
+	public function findDetail($id){
+    $hasil = $this->db->where('client_code',$id)->limit(1)->get('client');
+		if($hasil->num_rows() > 0){
+			return $hasil->row();
+		}else {
+			return array();
+		}
+  }
 
 	public function create(){
 	$data = array(

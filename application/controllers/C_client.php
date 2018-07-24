@@ -32,7 +32,8 @@ class C_client extends CI_Controller {
 
 	public function getList(){
 		$data['pelanggan']="client";
-		$data['client']=$this->M_client->getperProject($_SESSION['project']);
+		$data['client']=$this->M_client->getperProject($data);
+		$this->load->view('pages/admin/V_listClient');
 		$this->load->view('templates/header');
 		$this->load->view('templates/footer');
 	}
