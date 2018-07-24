@@ -37,7 +37,7 @@
                     <tr>
                       <td><?= $key->client_code ?></td>
                       <td><?= $key->client_name ?></td>
-                      <td><?= $key->name ?></td>
+                      <td></td>
                       <td>
                         <div class="btn-group">
                           <a class="btn btn-success" href="<?= base_url('C_client/addClient')?>"><i class="fa fa-eye"> See Details</i></a>

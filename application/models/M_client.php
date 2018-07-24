@@ -5,7 +5,7 @@ class M_client extends CI_Model{
 	}
 
 	public function getAll(){
-		$hasil = $this->db->where('client.client_code=project.clientID')->get('client,project');
+		$hasil = $this->db->get('client');
 		if($hasil->num_rows() > 0){
 			return $hasil->result();
 		}else {
@@ -38,7 +38,7 @@ class M_client extends CI_Model{
 		);
 		return  $this->db->insert('client', $data);
 	}
-	
+
 	public function update($id, $data){
 		$this->db->where('client',$id)->update('client',$data);
 	}
