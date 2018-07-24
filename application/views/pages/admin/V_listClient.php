@@ -36,7 +36,7 @@
                       <td>
                         <div class="btn-group">
                           <a class="btn btn-success" href="<?= base_url('C_client/addClient')?>"><i class="fa fa-eye"> See Details</i></a>
-                          <a class="btn btn-danger" href="<?= base_url('C_client/addClient')?>"><i class="fa fa-remove"> Remove Client</i></a>
+                          <a class="btn btn-danger" href="<?= base_url('C_client/removeList')?>"><i class="fa fa-remove"> Remove Client</i></a>
                           <a class="btn btn-info" href="<?= base_url('C_client/addClient')?>"><i class="fa fa-edit"> Edit Client</i></a>
                         </div>
                       </td>

@@ -18,23 +18,23 @@
         </div>
         <!-- /.box-header -->
         <!-- form start -->
-        <form role="form" id="formInput" action="<?php echo base_url('C_Project/addProject') ?>" method="post">
+        <form role="form" id="formInput" method="post" action="<?php base_url('C_Project/addProject') ?>">
           <div class="box-body">
             <div class="form-group">
-              <label for="pro_code">Project Code</label>
-              <input type="text" class="form-control" name="pro_code" id="pro_code" placeholder="Code">
+              <label for="code">Project Code<span class="required">*</span></label>
+              <input type="text" class="form-control" name="proCode" id="proCode" placeholder="Code">
             </div>
             <div class="form-group">
-              <label for="pro_name">Project Name</label>
-              <input type="text" class="form-control" name="pro_name" id="pro_name" placeholder="Name">
+              <label for="project">Project Name<span class="required">*</span></label>
+              <input type="text" class="form-control" name="proName" id="proName" placeholder="Name">
             </div>
             <div class="form-group">
-              <label for="pro_date">Date</label>
-              <input type="date" class="form-control" name="pro_date" id="pro_date" value="<?= date('Y-m-d')?>" >
+              <label for="date">Date<span class="required">*</span></label>
+              <input type="date" class="form-control" name="proDate" id="proDate" value="<?= date('Y-m-d')?>" >
             </div>
             <div class="checkbox">
               <label for="clientID">Client</label>
-              <select class="form-group" name="clientID" id="clientID">
+              <select class="form-group" name="client" id="client">
                 <option> -- Select Client -- </option>
                 <?php foreach ($client as $c) { ?>
                   <option value="<?= $c->client_code ?>"><?= $c->client_name ?></option>
@@ -42,8 +42,8 @@
               </select>
             </div>
             <div class="form-group">
-              <label for="note">Add Notes</label>
-              <textarea class="form-control" name="note" id="note"></textarea>
+              <label for="note">Add Notes<span class="required">*</span></label>
+              <textarea class="form-control" name="Note" id="Note"></textarea>
             </div>
           </div>
           <!-- /.box-body -->

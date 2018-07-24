@@ -7,33 +7,38 @@ class C_Project extends CI_Controller {
     $this->load->model('M_Project');
 		$this->load->model('M_Process');
 		$this->load->model('M_client');
+		$this->load->helper('url_helper');
+		$this->load->helper(array('form', 'url'));
+		$this->load->library('form_validation');
 	}
 
 	public function index()
 	{
-    $data['project']=$this->M_Project->getAll();
-		$this->load->view('pages/admin/V_listProject', $data);
+		$this->load->view('pages/admin/V_listProject');
 	}
 
 	public function addProject(){
-		$this->form_validation->set_rules('clientCode', 'client_code', 'required');
-		$this->form_validation->set_rules('clientName', 'client_name', 'required');
+		$this->form_validation->set_rules('proCode', 'Code', 'required');
+		$this->form_validation->set_rules('proName', 'Name', 'required');
+		$this->form_validation->set_rules('proDate', 'pro date', 'required');
+		$this->form_validation->set_rules('client', 'client id', 'required');
+		$this->form_validation->set_rules('Note', 'note', 'required');
 
 		if($this->form_validation->run() == FALSE){
 			$data['menu']='project';
       $data['client']=$this->M_client->getAll();
-			$this->load->view('pages/admin/V_ProjectForm',$data);
+			$this->load->view('pages/admin/V_projectForm',$data);
 		}else{
-			$data = array(
-        'pro_code'	=> set_value('pro_code'),
-        'pro_name'	=> set_value('pro_name'),
-        'pro_date'	=> set_value('pro_date'),
-        'clientID'	=> set_value('M_client'),
-        'note'      => set_value('note')
-			);
-			$res=$this->M_Project->create($data);
-			redirect(base_url('C_Project'));
+			$this->load->model('M_Project');
+			$this->M_Project->create();
+			$this->load->view('pages/admin/V_listProject');
 		}
+	}
+
+	public function getList(){
+		$data['menu']="project";
+		$data['project']=$this->M_Project->getAll();
+		$this->load->view('pages/admin/V_listProject',$data);
 	}
 }
 ?>

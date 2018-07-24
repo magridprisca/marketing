@@ -17,14 +17,14 @@
           </div>
           <!-- /.box-header -->
           <!-- form start -->
-          <form role="form" id="formInput" method="post"action="<?= base_url('C_client/addClient') ?>">
+          <form role="form" id="formInput" method="post" action="<?= base_url('C_client/addClient') ?>">
             <div class="box-body">
               <div class="form-group">
-                <label for="code">Client code<span classs="required">*</span></label>
+                <label for="code">Client code<span class="required">*</span></label>
                 <input class="form-control" id="clientCode" name="clientCode" placeholder="Client code">
               </div>
               <div class="form-group">
-                <label for="name">Name<span classs="required">*</span></label>
+                <label for="name">Name<span class="required">*</span></label>
                 <input class="form-control" id="clientName" name="clientName" placeholder="Client name">
               </div>
             </div>

@@ -36,5 +36,11 @@ class C_client extends CI_Controller {
 		$data['client']=$this->M_client->getAll();
 		$this->load->view('pages/admin/V_listClient',$data);
 	}
+
+	public function removeList(){
+		//$data['pelanggan']="client";
+		//$this->M_client->delete('client', array('client_code' => $id));
+		//$this->load->view('pages/admin/V_listClient',$data);
+	}
 }
 ?>

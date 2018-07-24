@@ -33,8 +33,9 @@ class M_client extends CI_Model{
 	public function update($id, $data){
 		$this->db->where('client',$id)->update('client',$data);
 	}
+
 	public function delete($id){
-		$this->db->where('client',$id)->delete('client');
+		$this->db->where('client_code',$id)->delete('client');
 	}
 }
 ?>

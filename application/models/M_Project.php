@@ -12,8 +12,15 @@ class M_Project extends CI_Model{
 			return array();
 		}
 	}
-  public function create($data){
-    $this->db->insert('pro_code', $data);
+  public function create(){
+		$data = array(
+			'pro_code'	=> $this->input->post('proCode'),
+			'pro_name'	=> $this->input->post('proName'),
+			'pro_date'	=> $this->input->post('proDate'),
+			'clientID'	=> $this->input->post('client'),
+			'note'      => $this->input->post('Note')
+		);
+    return $this->db->insert('project', $data);
   }
   public function update($id, $data){
     $this->db->where('pro_code',$id)->update('project',$data);
