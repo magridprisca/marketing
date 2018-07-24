@@ -14,7 +14,7 @@
             <div class="box-header with-border">
               <h3 class="box-title">Datatable List</h3>
               <div class="box-tools pull-right">
-                <button type="button" id="btnTambah" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i><a href = 'C_client/addClient'>Tambah</button>
+                <button type="button" id="btnTambah" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i><a href="<?= base_url('C_client/addClient')?>">Tambah</button>
               </div>
             </div>
           </div>
@@ -40,7 +40,7 @@
                       <td><?= $key->name ?></td>
                       <td>
                         <div class="btn-group">
-                          <a class="btn btn-success" href="<?= base_url('C_client/addCliet')?>"><i class="fa fa-eye"> See Details</i></a>
+                          <a class="btn btn-success" href="<?= base_url('C_client/addClient')?>"><i class="fa fa-eye"> See Details</i></a>
                         </div>
                       </td>
                     </tr>
