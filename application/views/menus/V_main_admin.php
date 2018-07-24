@@ -17,6 +17,6 @@
   </ul>
 </li>
 <li>
-  <a href="C_client">
+  <a href="C_client/getList">
     <i class="fa fa-handshake-o"></i> <span>Client</span>
 </li>
