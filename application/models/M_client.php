@@ -14,11 +14,7 @@ class M_client extends CI_Model{
 	}
 
 	public function create($data){
-<<<<<<< HEAD
-	$this->db->insert('client', $data);
-=======
 		$this->db->insert('client', $data);
->>>>>>> 720400479694d55d44538385528c10e6ca11817e
 	}
 	public function update($id, $data){
 		$this->db->where('client',$id)->update('client',$data);
@@ -26,8 +22,5 @@ class M_client extends CI_Model{
 	public function delete($id){
 		$this->db->where('client',$id)->delete('client');
 	}
-<<<<<<< HEAD
 }
-=======
->>>>>>> 720400479694d55d44538385528c10e6ca11817e
 ?>
