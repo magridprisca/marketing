@@ -36,7 +36,9 @@
               <label for="clientID">Client</label>
               <select class="form-group" name="clientID" id="clientID">
                 <option> -- Select Client -- </option>
-                <option></option>
+                <?php foreach ($client as $c) { ?>
+                  <option value="<?= $c->client_code ?>"><?= $c->client_name ?></option>
+                <?php } ?>
               </select>
             </div>
             <div class="form-group">
@@ -48,7 +50,7 @@
 
           <div class="box-footer">
             <button type="button" id="btnTutup" class="btn btn-default">Tutup</button>
-            <button id="btnSimpan" class="btn btn-primary pull-right">Simpan</button>
+            <button type="submit" class="btn btn-primary pull-right">Simpan</button>
           </div>
         </form>
       </div>
@@ -75,73 +77,12 @@
       </div>
       <!-- modal-dialog -->
 
-      <!-- fancybox-dialog -->
-      <div id="modal-fancybox" style="display:none">
-        <div class="box box-primary">
-          <div class="box-header with-border">
-            <h3 class="box-title">Fancybox Modal</h3>
-          </div>
-          <!-- /.box-header -->
-          <!-- form start -->
-          <form role="form" id="formInputModal" action="<?php echo site_url() ?>example/saving" method="post">
-            <div class="box-body">
-              <div class="form-group">
-                <label for="exampleModalEmail1">Email address</label>
-                <input type="email" class="form-control" id="exampleModalEmail1" placeholder="Enter email">
-              </div>
-              <div class="form-group">
-                <label for="exampleModalPassword1">Password</label>
-                <input type="password" class="form-control" id="exampleModalPassword1" placeholder="Password">
-              </div>
-              <div class="form-group">
-                <label for="exampleModalFile">File input</label>
-                <input type="file" id="exampleModalFile">
-
-                <p class="help-block">Example block-level help text here.</p>
-              </div>
-              <div class="checkbox">
-                <label>
-                  <input type="checkbox"> Check me out
-                </label>
-              </div>
-            </div>
-            <!-- /.box-body -->
-
-            <div class="box-footer">
-              <button type="button" id="btnTutupModal" class="btn btn-default">Tutup</button>
-              <button id="btnSimpanModal" class="btn btn-primary pull-right">Simpan</button>
-            </div>
-          </form>
-        </div>
-      </div>
-      <!-- fancybox-dialog -->
-
     </div>
   </div>
 </section>
 
 <?php $this->load->view('templates/config/js_main')?>
 <script>
-$(document).ready(function() {
-  $("#btnModal").fancybox({
-      'width':800,
-      'height':'auto',
-      'padding': 10,
-      'closeBtn': false,
-      'autoSize' : false,
-      'autoDimensions': false,
-      'closeClick'  : false, // prevents closing when clicking INSIDE fancybox
-      'helpers'     : {
-        'overlay' : {'closeClick': false} // prevents closing when clicking OUTSIDE fancybox
-      },
-      'afterShow' : function() {
-        $('#btnTutupModal').on('click',function(){
-          $.fancybox.close();
-        });
-      }
-  });
-});
-
 $('#btnSimpan').on('click',function(){
   var frm = $('#formInput');
   var submitData = true;

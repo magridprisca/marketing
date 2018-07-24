@@ -11,7 +11,8 @@ class C_Project extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('pages/admin/V_listProject');
+    $data['project']=$this->M_Project->getAll();
+		$this->load->view('pages/admin/V_listProject', $data);
 	}
 
 	public function addProject(){
@@ -20,7 +21,7 @@ class C_Project extends CI_Controller {
 
 		if($this->form_validation->run() == FALSE){
 			$data['menu']='project';
-      $data['client']=$this->M_Project->getAll();
+      $data['client']=$this->M_client->getAll();
 			$this->load->view('pages/admin/V_ProjectForm',$data);
 		}else{
 			$data = array(
@@ -30,13 +31,9 @@ class C_Project extends CI_Controller {
         'clientID'	=> set_value('M_client'),
         'note'      => set_value('note')
 			);
-			$res=$this->M_project->create($data);
+			$res=$this->M_Project->create($data);
 			redirect(base_url('C_Project'));
 		}
-	}
-
-	public function getAll(){
-
 	}
 }
 ?>
