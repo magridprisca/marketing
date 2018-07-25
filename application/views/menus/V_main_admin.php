@@ -1,11 +1,11 @@
 <li class="header">MAIN NAVIGATION</li>
-<li class="active treeview menu-open">
-  <a href="#">
+<li class="treeview menu-open <?php if($menu=='home'){echo "active";}?>">
+  <a href="<?= base_url(); ?>">
     <i class="fa fa-universal-access"></i> <span>Dashboard</span>
     <span class="pull-right-container">
   </a>
 </li>
-<li class="treeview menu-open">
+<li class="treeview menu-open <?php if($menu=='project'){echo "active";}?>">
   <a href="#">
     <i class="fa fa-dashboard"></i> <span>Project</span>
     <span class="pull-right-container">
@@ -17,7 +17,7 @@
     <li class="active"><a href="<?= base_url('C_Project');?>"><i class="fa fa-circle-o"></i> Process Project</a></li>
   </ul>
 </li>
-<li class="menu-open">
+<li class="menu-open <?php if($menu=='client'){echo "active";}?>">
   <a href="<?= base_url('C_client/getList');?>">
     <i class="fa fa-handshake-o"></i> <span>Client</span>
     <span class="pull-right-container">

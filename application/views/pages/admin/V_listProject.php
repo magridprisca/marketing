@@ -34,9 +34,9 @@
                       <td><?= $key->clientID ?></td>
                       <td>
                         <div class="btn-group">
-                          <a class="btn btn-success" href="<?= base_url('C_client/addClient')?>"><i class="fa fa-eye"> See Details</i></a>
-                          <a class="btn btn-danger" href="<?= base_url('C_client/removeList')?>"><i class="fa fa-remove"> Remove Client</i></a>
-                          <a class="btn btn-info" href="<?= base_url('C_client/addClient')?>"><i class="fa fa-edit"> Edit Client</i></a>
+                          <a class="btn btn-success" href="<?= base_url('C_Project/detail/'.$key->pro_code)?>"><i class="fa fa-eye"> See Details</i></a>
+                          <a class="btn btn-info" href="<?= base_url('C_Project/edit/'.$key->pro_code)?>"><i class="fa fa-edit"> Edit Project</i></a>
+                          <a class="btn btn-danger" href="<?= base_url('C_Project/remove/'.$key->pro_code)?>"><i class="fa fa-remove"> Remove Priject</i></a>
                         </div>
                       </td>
                     </tr>

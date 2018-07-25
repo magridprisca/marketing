@@ -13,6 +13,7 @@ class C_client extends CI_Controller {
 
 	public function index()
 	{
+		$data['menu']='client';
 		$this->load->view('pages/admin/V_listClient');
 	}
 
@@ -21,7 +22,7 @@ class C_client extends CI_Controller {
 		$this->form_validation->set_rules('clientName', 'client name', 'required');
 
 		if($this->form_validation->run() == FALSE){
-			$data['pelanggan']="client";
+			$data['menu']='client';
 			$this->load->view('pages/admin/V_clientForm', $data);
 			$this->load->view('templates/footer');
 		}else{
@@ -32,7 +33,7 @@ class C_client extends CI_Controller {
 	}
 
 	public function getList(){
-		$data['pelanggan']="client";
+		$data['menu']='client';
 		$data['client']=$this->M_client->getAll();
 		$this->load->view('pages/admin/V_listClient',$data);
 	}

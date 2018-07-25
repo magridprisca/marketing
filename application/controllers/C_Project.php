@@ -14,7 +14,9 @@ class C_Project extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('pages/admin/V_listProject');
+		$data['menu']="project";
+		$data['project']=$this->M_Project->getAll();
+		$this->load->view('pages/admin/V_listProject',$data);
 	}
 
 	public function addProject(){
@@ -29,16 +31,20 @@ class C_Project extends CI_Controller {
       $data['client']=$this->M_client->getAll();
 			$this->load->view('pages/admin/V_projectForm',$data);
 		}else{
-			$this->load->model('M_Project');
+			$data['menu']='project';
 			$this->M_Project->create();
-			$this->load->view('pages/admin/V_listProject');
+			redirect(base_url('C_Project'));
 		}
 	}
+	public function remove($code){
+		$this->M_Project->delete();
+		redirect(base_url('C_Project'));
+	}
+	public function detail($code){
 
-	public function getList(){
-		$data['menu']="project";
-		$data['project']=$this->M_Project->getAll();
-		$this->load->view('pages/admin/V_listProject',$data);
+	}
+	public function edit($code){
+
 	}
 }
 ?>
