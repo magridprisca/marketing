@@ -12,7 +12,7 @@
     </span>
   </a>
   <ul class="treeview-menu">
-    <li class="active"><a href="<?= base_url('C_Project/giveProgress');?>"><i class="fa fa-circle-o"></i> Process Project</a></li>
+    <li class="active"><a href="<?= base_url('C_process');?>"><i class="fa fa-circle-o"></i> Process Project</a></li>
   </ul>
 </li>
 <li class="menu-open <?php if($menu=='client'){echo "active";}?>">

@@ -46,11 +46,5 @@ class C_Project extends CI_Controller {
 	public function edit($code){
 
 	}
-
-	public function giveProgress(){
-		$data['menu']='project';
-		$data['project']=$this->M_Project->getAll();
-		$this->load->view('pages/V_process_project', $data);
-	}
 }
 ?>
