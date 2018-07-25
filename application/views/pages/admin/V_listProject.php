@@ -26,7 +26,7 @@
               <thead>
                   <tr style="background-color: #2A3542">
                     <th width="100px" style="color: #FFFFFF"><i class=""> </i>  Project Code</th>
-                    <th width="250px" style="color: #FFFFFF"><i class="fa fa-user-o"></i>  Project Name</th>
+                    <th width="200px" style="color: #FFFFFF"><i class="fa fa-user-o"></i>  Project Name</th>
                       <th width="100px" style="color: #FFFFFF"><i class=""> </i>  Date Create</th>
                       <th width="100px" style="color: #FFFFFF"><i class="fa fa-user-o"></i>  Client</th>
                     <th width="300px" style="color: #FFFFFF"><i class="fa fa-cogs"></i>  Action</th>
