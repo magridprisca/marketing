@@ -23,23 +23,23 @@
                     <form class="form-horizontal">
                       <!-- Project ID -->
                       <div class="form-group">
-                        <label class="control-label col-lg-2" for="title">Project ID</label>
+                        <label class="control-label col-lg-2" for="projectid">Project ID</label>
                         <div class="col-lg-10">
-                          <input type="text" class="form-control" id="title">
+                          <input type="text" class="form-control" id="title" disabled value="projectid">
                         </div>
                       </div>
                       <!-- Project -->
                       <div class="form-group">
-                        <label class="control-label col-lg-2" for="content">Project Name</label>
+                        <label class="control-label col-lg-2" for="projectname">Project Name</label>
                         <div class="col-lg-10">
-                          <input type="text" class="form-control" id="project">
+                          <input type="text" class="form-control" id="project" disabled value="project name">
                         </div>
                       </div>
                       <!-- Client -->
                       <div class="form-group">
                         <label class="control-label col-lg-2" for="client">Client</label>
                         <div class="col-lg-10">
-                          <input type="text" class="form-control" name="Client" id="Client">
+                          <input type="text" class="form-control" name="Client" id="Client" disabled value="client">
                         </div>
                       </div>
                       <!-- Process, Sub-Process, Sub-sub Process-->
@@ -49,7 +49,7 @@
                           <select class="form-control" name="Process" id="Process">
                                                   <option value="">- Choose Process -</option>
                                                   <?php foreach ($process as $pc) { ?>
-                                                    <option value="<?= $pc->process_code ?>"><?= $c->process_name ?></option>
+                                                    <option value="<?= $pc->process_code ?>"><?= $pc->process_name ?></option>
                                                   <?php } ?>
                                                 </select>
                         </div>
@@ -60,20 +60,20 @@
                           <select class="form-control" name="subProcess" id="subProcess">
                                                   <option value="">- Choose Sub Process -</option>
                                                   <?php foreach ($process as $pc) { ?>
-                                                    <option value="<?= $pc->process_code ?>"><?= $c->process_name ?></option>
+                                                    <option value="<?= $pc->process_code ?>"><?= $pc->process_name ?></option>
                                                   <?php } ?>
-                                                </select>
+                          </select>
                         </div>
                       </div>
                       <div class="form-group">
                         <label class="control-label col-lg-2" for="sub-sub process">Sub-sub Process</label>
                         <div class="col-lg-10">
                           <select class="form-control" name="subsubProcess" id="subsubProcess">
-                                                  <option value="">- Choose Sub-sub Process -</option>
-                                                  <?php foreach ($process as $pc) { ?>
-                                                    <option value="<?= $pc->process_code ?>"><?= $c->process_name ?></option>
-                                                  <?php } ?>
-                                                </select>
+                                  <option value="">- Choose Sub-sub Process -</option>
+                                        <?php foreach ($process as $pc) { ?>
+                                          <option value="<?= $pc->process_code ?>"><?= $pc->process_name ?></option>
+                                        <?php } ?>
+                          </select>
                         </div>
                       </div>
                       <!-- Tags -->
