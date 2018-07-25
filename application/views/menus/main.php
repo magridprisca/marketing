@@ -1,21 +1,22 @@
 <li class="header">MAIN NAVIGATION</li>
-<li class="active treeview menu-open">
+<li class="menu-open <?php if($menu=='home'){echo "active";}?>">
+  <a href="<?= base_url(); ?>">
+    <i class="fa fa-universal-access"></i> <span>Dashboard</span>
+  </a>
+</li>
+<li class="treeview menu <?php if($menu=='project'){echo "active";}?>">
   <a href="#">
-    <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+    <i class="fa fa-dashboard"></i> <span>Project</span>
     <span class="pull-right-container">
       <i class="fa fa-angle-left pull-right"></i>
     </span>
   </a>
   <ul class="treeview-menu">
-    <li><a href="index.html"><i class="fa fa-circle-o"></i> Dashboard v1</a></li>
-    <li class="active"><a href="index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
+    <li class="active"><a href="<?= base_url('C_Project');?>"><i class="fa fa-circle-o"></i> Process Project</a></li>
   </ul>
 </li>
-<li>
-  <a href="<?php echo site_url();?>example">
-    <i class="fa fa-th"></i> <span>Example</span>
-    <span class="pull-right-container">
-      <small class="label pull-right bg-green">new</small>
-    </span>
+<li class="menu-open <?php if($menu=='client'){echo "active";}?>">
+  <a href="<?= base_url('C_client/getList');?>">
+    <i class="fa fa-handshake-o"></i> <span>Client</span>
   </a>
 </li>

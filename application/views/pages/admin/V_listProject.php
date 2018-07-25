@@ -43,7 +43,18 @@
                   <?php } ?>
                 </tbody>
               </table>
-    <section>
+    </section>
     </div>
   </div>
-  <section>
+</section>
+<?php $this->load->view('templates/config/js_main')?>
+<script>
+$(document).ready(function() {
+  $('#example').DataTable();
+});
+
+$('#btnTambah').on('click',function(){
+  window.location = "<?php echo site_url()?>example/form";
+});
+</script>
+<?php $this->load->view('templates/footer')?>

@@ -45,7 +45,6 @@
                 <!-- User image -->
                 <li class="user-header">
                   <img src="<?php echo base_url(); ?>assets/templates/img/avatar5.png" class="img-circle" alt="User Image">
-
                   <p>
                     <?= $_SESSION['nama']?>
                     <small><?= $_SESSION['email']?></small>
@@ -83,7 +82,11 @@
       <!-- sidebar: style can be found in sidebar.less -->
       <section class="sidebar">
         <ul class="sidebar-menu" data-widget="tree">
-          <?php $this->load->view('menus/V_main_admin');?>
+          <?php if(isset($_SESSION['status'])){
+            $this->load->view('menus/V_main_admin');
+          }else {
+            $this->load->view('menus/main');
+          } ?>
         </ul>
       </section>
       <!-- /.sidebar -->
