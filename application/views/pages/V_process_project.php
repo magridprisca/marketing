@@ -37,16 +37,16 @@
                       </div>
                       <!-- Client -->
                       <div class="form-group">
-                        <label class="control-label col-lg-2" for="content">Client</label>
+                        <label class="control-label col-lg-2" for="client">Client</label>
                         <div class="col-lg-10">
-                          <input type="text" class="form-control" id="client">
+                          <input type="text" class="form-control" name="Client" id="Client">
                         </div>
                       </div>
                       <!-- Process, Sub-Process, Sub-sub Process-->
                       <div class="form-group">
-                        <label class="control-label col-lg-2">Process</label>
+                        <label class="control-label col-lg-2" for="process">Process</label>
                         <div class="col-lg-10">
-                          <select class="form-control">
+                          <select class="form-control" name="Process" id="Process">
                                                   <option value="">- Choose Process -</option>
                                                   <?php foreach ($process as $pc) { ?>
                                                     <option value="<?= $pc->process_code ?>"><?= $c->process_name ?></option>
@@ -55,9 +55,9 @@
                         </div>
                       </div>
                       <div class="form-group">
-                        <label class="control-label col-lg-2">Sub Process</label>
+                        <label class="control-label col-lg-2" for="sub-process">Sub Process</label>
                         <div class="col-lg-10">
-                          <select class="form-control">
+                          <select class="form-control" name="subProcess" id="subProcess">
                                                   <option value="">- Choose Sub Process -</option>
                                                   <?php foreach ($process as $pc) { ?>
                                                     <option value="<?= $pc->process_code ?>"><?= $c->process_name ?></option>
@@ -66,9 +66,9 @@
                         </div>
                       </div>
                       <div class="form-group">
-                        <label class="control-label col-lg-2">Sub-sub Process</label>
+                        <label class="control-label col-lg-2" for="sub-sub process">Sub-sub Process</label>
                         <div class="col-lg-10">
-                          <select class="form-control">
+                          <select class="form-control" name="subsubProcess" id="subsubProcess">
                                                   <option value="">- Choose Sub-sub Process -</option>
                                                   <?php foreach ($process as $pc) { ?>
                                                     <option value="<?= $pc->process_code ?>"><?= $c->process_name ?></option>
@@ -80,7 +80,7 @@
                       <div class="form-group">
                         <label class="control-label col-lg-2" for="note">Note<span class="required"></span></label>
                         <div class="col-lg-10">
-                          <textarea class="form-control" name="Note" id="content"></textarea>
+                          <textarea class="form-control" name="Note" id="Note"></textarea>
                         </div>
                       </div>
                       <!-- Buttons -->

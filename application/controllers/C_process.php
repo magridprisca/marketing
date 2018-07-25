@@ -17,12 +17,11 @@ class C_process extends CI_Controller {
     $data['pc']="process";
 		$data['process']=$this->M_Process->getAll();
     $this->load->view('pages/V_process_project', $data);
-		$this->load->view('pages/admin/V_listProject',$data);
 	}
 
 	public function addProject(){
-		$this->form_validation->set_rules('Code', 'Code', 'required');
-		$this->form_validation->set_rules('Name', 'Name', 'required');
+		$this->form_validation->set_rules('Code', 'code', 'required');
+		$this->form_validation->set_rules('Name', 'name', 'required');
 		$this->form_validation->set_rules('Process', 'process', 'required');
 		$this->form_validation->set_rules('subProcess', 'sub process', 'required');
 		$this->form_validation->set_rules('subsubProcess', 'sub-sub process', 'required');
