@@ -1,31 +1,38 @@
 <?php $this->load->view('templates/header')?>
-<section class="content">
+<section class="content-header">
+  <h1>
+    CProject
+  </h1>
   <ol class="breadcrumb">
     <li><a href="#"><i class="fa fa-universal-access"></i> Home</a></li>
-    <li class="active"><i class="fa fa-dashboard"></i> Project</li>
+    <li class="active">Project</li>
   </ol>
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="box">
-            <div class="box-header with-border">
-              <h3 class="box-title" text-style="bold">Project List</h3>
-            </div>
-          </div>
+</section>
+<!-- Main content -->
+<section class="content">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="box">
+        <div class="box-header with-border">
+          <h3 class="box-title">Datatable Project List</h3>
+          <div class="box-tools pull-right">
         </div>
       </div>
-<!--List client-->
-    <div class="row">
-    <div class="col-lg-12">
-        <section class="panel">
-        <table class="table table-striped table-bordered">
-                <tbody>
+<!--List project-->
+      <div class="box-body">
+        <div class="row">
+          <div class="col-md-12">
+            <table id="example" class="table table-striped table-bordered" style="width:100%">
+              <thead>
                   <tr style="background-color: #2A3542">
-                    <th width="150px" style="color: #FFFFFF"><i class=""> </i>  Project Code</th>
+                    <th width="100px" style="color: #FFFFFF"><i class=""> </i>  Project Code</th>
                     <th width="250px" style="color: #FFFFFF"><i class="fa fa-user-o"></i>  Project Name</th>
                       <th width="100px" style="color: #FFFFFF"><i class=""> </i>  Date Create</th>
                       <th width="100px" style="color: #FFFFFF"><i class="fa fa-user-o"></i>  Client</th>
                     <th width="300px" style="color: #FFFFFF"><i class="fa fa-cogs"></i>  Action</th>
                   </tr>
+                </thead>
+                <tbody>
                   <?php foreach ($project as $key){?>
                     <tr>
                       <td><?= $key->pro_code ?></td>
@@ -43,7 +50,12 @@
                   <?php } ?>
                 </tbody>
               </table>
-    </section>
+<!--box header-->
+    </div>
+  </div>
+</div>
+<!--List project-->
+      </div>
     </div>
   </div>
 </section>
@@ -53,8 +65,5 @@ $(document).ready(function() {
   $('#example').DataTable();
 });
 
-$('#btnTambah').on('click',function(){
-  window.location = "<?php echo site_url()?>example/form";
-});
 </script>
 <?php $this->load->view('templates/footer')?>
