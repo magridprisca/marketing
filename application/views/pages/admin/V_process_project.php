@@ -25,21 +25,21 @@
                       <div class="form-group">
                         <label class="control-label col-lg-2" for="projectid">Project ID</label>
                         <div class="col-lg-10">
-                          <input type="text" class="form-control" id="title" disabled value="projectid">
+                          <input type="text" class="form-control" id="title" disabled value="<?= $process->pro_code ?>">
                         </div>
                       </div>
                       <!-- Project -->
                       <div class="form-group">
                         <label class="control-label col-lg-2" for="projectname">Project Name</label>
                         <div class="col-lg-10">
-                          <input type="text" class="form-control" id="project" disabled value="project name">
+                          <input type="text" class="form-control" id="project" disabled value="<?= $process->pro_name ?>">
                         </div>
                       </div>
                       <!-- Client -->
                       <div class="form-group">
                         <label class="control-label col-lg-2" for="client">Client</label>
                         <div class="col-lg-10">
-                          <input type="text" class="form-control" name="Client" id="Client" disabled value="client">
+                          <input type="text" class="form-control" name="Client" id="Client" disabled value="<?= $process->client_name ?>">
                         </div>
                       </div>
                       <!-- Process, Sub-Process, Sub-sub Process-->

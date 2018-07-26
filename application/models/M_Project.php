@@ -5,7 +5,7 @@ class M_Project extends CI_Model{
 	}
 
 	public function getAll(){
-		$hasil = $this->db->get('project');
+		$hasil = $this->db->where('project.clientID=client.client_code')->get('project,client');
 		if($hasil->num_rows() > 0){
 			return $hasil->result();
 		}else {
@@ -29,7 +29,7 @@ class M_Project extends CI_Model{
     $this->db->where('pro_code',$id)->delete('project');
   }
   public function findDetail($id){
-    $hasil = $this->db->where('pro_code',$id)->limit(1)->get('project');
+    $hasil = $this->db->where('project.clientID=client.client_code and pro_code=',$id)->limit(1)->get('project,client');
 		if($hasil->num_rows() > 0){
 			return $hasil->row();
 		}else {

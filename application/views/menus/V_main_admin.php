@@ -12,8 +12,8 @@
     </span>
   </a>
   <ul class="treeview-menu">
-    <li class="<?php if($menu=='new_project'){echo "active";}?>"><a href="<?= base_url('C_Project/addProject');?>"><i class="fa fa-circle-o"></i> Add New Project</a></li>
-    <li class="<?php if($menu=='proccess_project'){echo "active";}?>"><a href="<?= base_url('C_process');?>"><i class="fa fa-circle-o"></i> Process Project</a></li>
+    <li class="<?php if($menu=='project'){echo "active";}?>"><a href="<?= base_url('C_Project/addProject');?>"><i class="fa fa-circle-o"></i> Add New Project</a></li>
+    <li class="<?php if($menu=='project'){echo "active";}?>"><a href="<?= base_url('C_Project');?>"><i class="fa fa-circle-o"></i> Process Project</a></li>
   </ul>
 </li>
 <li class="menu-open <?php if($menu=='client'){echo "active";}?>">
