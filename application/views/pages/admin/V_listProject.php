@@ -41,11 +41,11 @@
                       <td><?= $key->clientID ?></td>
                       <td align="center">
                         <div class="btn-group">
-                          <a class="btn btn-success" href="<?= base_url('C_Project/detail/'.$key->pro_code)?>"><i class="fa fa-eye"> Details</i></a>
                           <?php if ($this->session->userdata('user')){ ?>
-                            <a class="btn btn-info" href="<?= base_url('C_Project/edit/'.$key->pro_code)?>"><i class="fa fa-edit"> Edit</i></a>
-                            <a class="btn btn-danger" href="<?= base_url('C_Project/remove/'.$key->pro_code)?>"><i class="fa fa-eye"> View </i></a>
+                          <a class="btn btn-success" href="<?= base_url('C_Project/detail/'.$key->pro_code)?>"><i class="fa fa-eye"> Details</i></a>
+                          <a class="btn btn-info" href="<?= base_url('C_Project/edit/'.$key->pro_code)?>"><i class="fa fa-edit"> Edit</i></a>
                           <?php } ?>
+                          <a class="btn btn-success" href="<?= base_url('C_Project/remove/'.$key->pro_code)?>"><i class="fa fa-eye"> View </i></a>
                         </div>
                       </td>
                     </tr>
