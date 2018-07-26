@@ -36,11 +36,13 @@
               <tr>
                 <td><?= $key->client_code ?></td>
                 <td><?= $key->client_name ?></td>
-                <td>
+                <td align="center">
                   <div class="btn-group">
-                    <a class="btn btn-success" href="<?= base_url('C_client/addClient')?>"><i class="fa fa-eye"> See Details</i></a>
-                    <a class="btn btn-danger" href="<?= base_url('C_client/removeList')?>"><i class="fa fa-remove"> Remove Client</i></a>
-                    <a class="btn btn-info" href="<?= base_url('C_client/addClient')?>"><i class="fa fa-edit"> Edit Client</i></a>
+                    <a class="btn btn-success" href="<?= base_url('C_client/addClient')?>"><i class="fa fa-eye"> Details</i></a>
+                    <?php if ($this->session->userdata('user')){ ?>
+                    <a class="btn btn-info" href="<?= base_url('C_client/addClient')?>"><i class="fa fa-edit"> Edit</i></a>
+                    <a class="btn btn-danger" href="<?= base_url('C_client/removeList')?>"><i class="fa fa-remove"> Remove</i></a>
+                    <?php } ?>
                   </div>
                 </td>
               </tr>

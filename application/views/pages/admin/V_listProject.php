@@ -26,10 +26,10 @@
               <thead>
                   <tr style="background-color: #2A3542">
                     <th width="100px" style="color: #FFFFFF"><i class=""> </i>  Project Code</th>
-                    <th width="200px" style="color: #FFFFFF"><i class="fa fa-user-o"></i>  Project Name</th>
+                    <th width="250px" style="color: #FFFFFF"><i class="fa fa-user-o"></i>  Project Name</th>
                       <th width="100px" style="color: #FFFFFF"><i class=""> </i>  Date Create</th>
-                      <th width="100px" style="color: #FFFFFF"><i class="fa fa-user-o"></i>  Client</th>
-                    <th width="300px" style="color: #FFFFFF"><i class="fa fa-cogs"></i>  Action</th>
+                      <th width="150px" style="color: #FFFFFF"><i class="fa fa-user-o"></i>  Client</th>
+                    <th width="200px" style="color: #FFFFFF"><i class="fa fa-cogs"></i>  Action</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -39,13 +39,13 @@
                       <td><?= $key->pro_name ?></td>
                       <td><?= $key->pro_date ?></td>
                       <td><?= $key->clientID ?></td>
-                      <td>
+                      <td align="center">
                         <div class="btn-group">
-                          <a class="btn btn-success" href="<?= base_url('C_Project/detail/'.$key->pro_code)?>"><i class="fa fa-eye"> See Details</i></a>
-                          <?php //if (!isset($this->session->userdata('user'))){ ?>
-                            <a class="btn btn-info" href="<?= base_url('C_Project/edit/'.$key->pro_code)?>"><i class="fa fa-edit"> Edit Project</i></a>
-                            <a class="btn btn-danger" href="<?= base_url('C_Project/remove/'.$key->pro_code)?>"><i class="fa fa-remove"> Remove Priject</i></a>
-                          <?php //} ?>
+                          <a class="btn btn-success" href="<?= base_url('C_Project/detail/'.$key->pro_code)?>"><i class="fa fa-eye"> Details</i></a>
+                          <?php if ($this->session->userdata('user')){ ?>
+                            <a class="btn btn-info" href="<?= base_url('C_Project/edit/'.$key->pro_code)?>"><i class="fa fa-edit"> Edit</i></a>
+                            <a class="btn btn-danger" href="<?= base_url('C_Project/remove/'.$key->pro_code)?>"><i class="fa fa-eye"> View </i></a>
+                          <?php } ?>
                         </div>
                       </td>
                     </tr>

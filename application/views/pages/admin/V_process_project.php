@@ -17,7 +17,6 @@
         <div class="box-header with-border">
           <div class="box-tools pull-right"></div>
 <!-- Process -->
-  <div class="widget-icons"></div>
                   <div class="form quick-post">
                     <!-- Edit profile form (not working)-->
                     <form class="form-horizontal">
@@ -58,10 +57,10 @@
                         <label class="control-label col-lg-2" for="sub-process">Sub Process</label>
                         <div class="col-lg-10">
                           <select class="form-control" name="subProcess" id="subProcess">
-                                                  <option value="">- Choose Sub Process -</option>
-                                                  <?php foreach ($process as $pc) { ?>
-                                                    <option value="<?= $pc->process_code ?>"><?= $pc->process_name ?></option>
-                                                  <?php } ?>
+                              <option value="">- Choose Sub Process -</option>
+                              <?php foreach ($process as $pc) { ?>
+                                <option value="<?= $pc->process_code ?>"><?= $pc->process_name ?></option>
+                              <?php } ?>
                           </select>
                         </div>
                       </div>
@@ -69,14 +68,17 @@
                         <label class="control-label col-lg-2" for="sub-sub process">Sub-sub Process</label>
                         <div class="col-lg-10">
                           <select class="form-control" name="subsubProcess" id="subsubProcess">
-                                  <option value="">- Choose Sub-sub Process -</option>
-                                        <?php foreach ($process as $pc) { ?>
-                                          <option value="<?= $pc->process_code ?>"><?= $pc->process_name ?></option>
-                                        <?php } ?>
+                            <option value="">- Choose Sub-sub Process -</option>
+                              <?php foreach ($process as $pc) { ?>
+                                <option value="<?= $pc->process_code ?>"><?= $pc->process_name ?></option>
+                              <?php } ?>
                           </select>
                         </div>
                       </div>
                       <!-- Tags -->
+                      <div class="form-group">
+                        <table></table>
+                      </div>
                       <div class="form-group">
                         <label class="control-label col-lg-2" for="note">Note<span class="required"></span></label>
                         <div class="col-lg-10">
@@ -87,20 +89,17 @@
                       <div class="form-group">
                         <!-- Buttons -->
                         <div class="col-lg-offset-2 col-lg-9">
-                          <button type="submit" class="btn btn-primary">Publish</button>
-                          <button type="submit" class="btn btn-danger">Save Draft</button>
+                          <button type="submit" class="btn btn-primary">Save</button>
+                          <button type="submit" class="btn btn-danger">Cancel</button>
                           <button type="reset" class="btn btn-default">Reset</button>
                         </div>
                       </div>
                     </form>
                   </div>
-<!-- Footer goes here -->
-<div class="widget-foot"></div>
-<!-- Asli -->
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-<section>
+</section>
+  <?php $this->load->view('templates/config/js_main')?>
+  <?php $this->load->view('templates/footer')?>

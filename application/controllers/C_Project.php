@@ -41,12 +41,19 @@ class C_Project extends CI_Controller {
 		redirect(base_url('C_Project'));
 	}
 	public function detail($code){
-
+			$data['menu']='project';
+			$data['process']=$this->M_Project->findDetail($code);
+			$this->load->view('pages/admin/V_process_project',$data);
 	}
 	public function edit($code){
 		$data['menu']='project';
 		$data['process']=$this->M_Project->findDetail($code);
-		$this->load->view('pages/admin/V_process_project',$data);
+		$this->load->view('pages/admin/V_editProject',$data);
+	}
+	public function view($code){
+			$data['menu']='project';
+			$data['process']=$this->M_Project->findDetail($code);
+			$this->load->view('pages/admin/V_process_project',$data);
 	}
 }
 ?>

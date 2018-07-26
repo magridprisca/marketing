@@ -32,9 +32,9 @@
               <label for="date">Date<span class="required">*</span></label>
               <input type="date" class="form-control" name="proDate" id="proDate" value="<?= date('Y-m-d')?>" >
             </div>
-            <div class="checkbox">
+            <div class="form-group">
               <label for="clientID">Client</label>
-              <select class="form-group" name="client" id="client">
+              <select class="form-control" name="client" id="client">
                 <option> -- Select Client -- </option>
                 <?php foreach ($client as $c) { ?>
                   <option value="<?= $c->client_code ?>"><?= $c->client_name ?></option>
