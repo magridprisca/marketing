@@ -41,14 +41,43 @@
                           <input type="text" class="form-control" name="Client" id="Client" value="<?= $process->client_name ?>">
                         </div>
                       </div>
-                      <!-- Tags -->
+                      <!--Table Process-->
+
                       <div class="form-group">
-                        <label class="control-label col-lg-2" for="note">Note<span class="required"></span></label>
+                        <div class="col-lg-2"></div>
+                        <div class="col-lg-10">
+                        <table class="table table-advance table-bordered">
+                          <thead>
+                            <tr style="background-color: #2A3542">
+                              <th colspan="5" width="100px" style="color: #FFFFFF" align="center"><i class=""> </i>Tahap 1</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr style="background-color: #336699">
+                              <th style="color: #FFFFFF"><i class="icon_pin_alt"> </i> No.</th>
+                              <th style="color: #FFFFFF"><i class="icon_pin_alt"> </i> Sub Process</th>
+                              <th style="color: #FFFFFF"><i class="icon_calendar"></i> Sub-sub Process</th>
+                              <th style="color: #FFFFFF"><i class="icon_mail_alt"></i> Checklist</th>
+                              <th style="color: #FFFFFF"><i class="icon_mail_alt"></i> Date</th>
+                            </tr>
+                            <tr style="background-color: #FFFFFF">
+                              <th>1</th>
+                              <th colspan="2">Promosi (Market Development)</th>
+                              <th><input type="checkbox"></th>
+                              <th><input type="date" value="<?= date('Y-m-d')?>" border=0></th>
+                            </tr>
+                          </tbody>
+                        </table>
+                        </div>
+                      </div>
+                      <!-- Note -->
+                      <div class="form-group">
+                        <label class="control-label col-lg-2" for="note">Note</label>
                         <div class="col-lg-10">
                           <textarea class="form-control" name="Note" id="Note"><?= $process->note ?></textarea>
                         </div>
                       </div>
-                      <!-- Buttons -->
+                      <!-- Buttons --><br>
                       <div class="form-group">
                         <!-- Buttons -->
                         <div class="col-lg-offset-2 col-lg-9">
