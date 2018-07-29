@@ -63,7 +63,7 @@
                             <tr style="background-color: #FFFFFF">
                               <th>1</th>
                               <th colspan="2">Promosi (Market Development)</th>
-                              <th><input type="checkbox" name="mardev"></th>
+                              <th><input type="checkbox" name="mardev" <?php if($process->promosi==1){echo "checked";} ?>></th>
                               <th><input type="date" value="<?= date('Y-m-d')?>" border=0></th>
                             </tr>
                             <tr style="background-color: #FFFFFF">
