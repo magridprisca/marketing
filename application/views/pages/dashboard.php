@@ -17,7 +17,7 @@
       <div class="row">
         <div class="col-md-3 col-sm-6 col-xs-12">
           <div class="info-box">
-            <span class="info-box-icon bg-aqua"><i class="ion ion-ios-gear-outline"></i></span>
+            <span class="info-box-icon bg-aqua"><i class="fa fa-gear"></i></span>
 
             <div class="info-box-content">
               <span class="info-box-text">CPU Traffic</span>
@@ -47,7 +47,7 @@
 
         <div class="col-md-3 col-sm-6 col-xs-12">
           <div class="info-box">
-            <span class="info-box-icon bg-green"><i class="ion ion-ios-cart-outline"></i></span>
+            <span class="info-box-icon bg-green"><i class="fa fa-cart-plus"></i></span>
 
             <div class="info-box-content">
               <span class="info-box-text">Sales</span>
@@ -60,7 +60,7 @@
         <!-- /.col -->
         <div class="col-md-3 col-sm-6 col-xs-12">
           <div class="info-box">
-            <span class="info-box-icon bg-yellow"><i class="ion ion-ios-people-outline"></i></span>
+            <span class="info-box-icon bg-yellow"><i class="fa fa-user"></i></span>
 
             <div class="info-box-content">
               <span class="info-box-text">New Members</span>
