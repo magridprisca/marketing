@@ -30,8 +30,12 @@ class M_client extends CI_Model{
 		return  $this->db->insert('client', $data);
 	}
 
-	public function update($id, $data){
-		$this->db->where('client',$id)->update('client',$data);
+	public function update($id){
+		$data = array(
+			'client_code' => $this->input->post('clientCode'),
+			'client_name' => $this->input->post('clientName')
+		);
+		$this->db->where('client_code',$id)->update('client',$data);
 	}
 
 	public function delete($id){

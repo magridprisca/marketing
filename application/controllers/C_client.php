@@ -11,10 +11,10 @@ class C_client extends CI_Controller {
     $this->load->library('form_validation');
 	}
 
-	public function index()
-	{
+	public function index(){
 		$data['menu']='client';
-		$this->load->view('pages/admin/V_listClient');
+		$data['client']=$this->M_client->getAll();
+		$this->load->view('pages/admin/V_listClient',$data);
 	}
 
 	public function addClient(){
@@ -24,11 +24,9 @@ class C_client extends CI_Controller {
 		if($this->form_validation->run() == FALSE){
 			$data['menu']='client';
 			$this->load->view('pages/admin/V_clientForm', $data);
-			$this->load->view('templates/footer');
 		}else{
-			$this->load->model('M_client');
 			$this->M_client->create();
-			$this->load->view('pages/admin/V_listClient');
+			redirect(base_url('C_client'));
 		}
 	}
 
@@ -38,10 +36,23 @@ class C_client extends CI_Controller {
 		$this->load->view('pages/admin/V_listClient',$data);
 	}
 
-	public function removeList(){
-		//$data['pelanggan']="client";
-		//$this->M_client->delete('client', array('client_code' => $id));
-		//$this->load->view('pages/admin/V_listClient',$data);
+	public function editClient($id){
+		$this->form_validation->set_rules('clientCode', 'client code', 'required');
+		$this->form_validation->set_rules('clientName', 'client name', 'required');
+
+		if($this->form_validation->run() == FALSE){
+			$data['menu']='client';
+			$data['client']=$this->M_client->findDetail($id);
+			$this->load->view('pages/admin/V_editClient', $data);
+		}else{
+			$this->M_client->update($id);
+			redirect(base_url('C_client'));
+		}
+	}
+
+	public function remove($id){
+		$this->M_client->delete($id);
+		redirect(base_url('C_client'));
 	}
 }
 ?>

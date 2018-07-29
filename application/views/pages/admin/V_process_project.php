@@ -90,7 +90,7 @@
                         <!-- Buttons -->
                         <div class="col-lg-offset-2 col-lg-9">
                           <button type="submit" class="btn btn-primary">Save</button>
-                          <button type="submit" class="btn btn-danger">Cancel</button>
+                          <button type="button" class="btn btn-danger" onclick="goBack()">Cancel</button>
                           <button type="reset" class="btn btn-default">Reset</button>
                         </div>
                       </div>

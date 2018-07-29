@@ -68,7 +68,7 @@
               <p>One fine body…</p>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-default pull-left" data-dismiss="modal" onclick="goBack()">Close</button>
               <button type="button" class="btn btn-primary">Save changes</button>
             </div>
           </div>

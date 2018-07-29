@@ -4,7 +4,7 @@
       <h1>FORM NEW CLIENT</h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">New Client</li>
+        <li class="active">Edit Client</li>
       </ol>
     </section>
 <!-- Formulir new clinet-->
@@ -13,19 +13,19 @@
       <div class="col-md-12">
         <div class="box box-primary">
           <div class="box-header with-border">
-            <h3 class="box-title">New Client</h3>
+            <h3 class="box-title">Edit Client</h3>
           </div>
           <!-- /.box-header -->
           <!-- form start -->
-          <form role="form" id="formInput" method="post" action="<?= base_url('C_client/addClient') ?>">
+          <form role="form" id="formInput" method="post" action="<?= base_url('C_client/editClient/'.$client->client_code) ?>">
             <div class="box-body">
               <div class="form-group">
                 <label for="code">Client code<span class="required">*</span></label>
-                <input class="form-control" id="clientCode" name="clientCode" placeholder="Client code">
+                <input class="form-control" id="clientCode" name="clientCode"  value="<?= $client->client_code ?>">
               </div>
               <div class="form-group">
                 <label for="name">Name<span class="required">*</span></label>
-                <input class="form-control" id="clientName" name="clientName" placeholder="Client name">
+                <input class="form-control" id="clientName" name="clientName" value="<?= $client->client_name ?>">
               </div>
             </div>
             <!-- /.box-body -->
@@ -50,7 +50,7 @@
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-default pull-left" data-dismiss="modal" onclick="goBack()">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+                <button type="submit" class="btn btn-primary">Save changes</button>
               </div>
             </div>
             <!-- /.modal-content -->

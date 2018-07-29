@@ -156,10 +156,6 @@
         </div>
       </div>
 </section>
-<script>
-function goBack(){
-  window.history.back();
-}
-</script>
+
   <?php $this->load->view('templates/config/js_main')?>
   <?php $this->load->view('templates/footer')?>

@@ -49,4 +49,8 @@
   	function blockHide(){
   		$.loadingBlockHide();
   	}
+
+    function goBack(){
+      window.history.back();
+    }
 </script>
