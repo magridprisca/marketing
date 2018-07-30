@@ -45,8 +45,7 @@ class C_Project extends CI_Controller {
 			$data['process']=$this->M_Project->findDetail($code);
 			$this->load->view('pages/admin/V_process_project',$data);
 	}
-
-	public function edit($code){
+	public function editproses($code){
 		$this->form_validation->set_rules('code', 'a', 'required');
 		$this->form_validation->set_rules('project', 'b', 'required');
 		$this->form_validation->set_rules('client', 'c', 'required');
@@ -107,14 +106,15 @@ class C_Project extends CI_Controller {
 		$this->form_validation->set_rules('efektifK', 'ddd');
 		$this->form_validation->set_rules('tgl_efektifK', 'eee', 'required');
 
-			if($this->form_validation->run() == FALSE){
+		$this->M_Project->update($code);
+		redirect(base_url('C_Project'));
+	}
+
+	public function edit($code){
+
 				$data['menu']='project';
 				$data['process']=$this->M_Project->findDetail($code);
 				$this->load->view('pages/admin/V_editProject',$data);
-			}else{
-				$this->M_Project->update($code);
-				redirect(base_url('C_Project'));
-			}
 
 	}
 	public function view($code){

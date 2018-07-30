@@ -24,9 +24,7 @@ class M_Project extends CI_Model{
   }
   public function update($code){
 		$data = array(
-			'pro_code' => $this->input->post('code'),
 			'pro_name' => $this->input->post('project'),
-			'clientID' => $this->input->post('client'),
 			'promosi' => $this->input->post('mardev'),
 			'tgl_promosi' => $this->input->post('tgl_mardev'),
 			'opsreq' => $this->input->post('opsreq'),
@@ -35,8 +33,8 @@ class M_Project extends CI_Model{
 			'tgl_presentasi' => $this->input->post('tgl_presentasi'),
 			'sourcing_harga' => $this->input->post('sourceprice'),
 			'tgl_sourcing_harga' => $this->input->post('tgl_sourceprice'),
-			'penyimpananDL' => $this->input->post('sff'),
-			'tgl_penyimpananDL' => $this->input->post('tgl_sff'),
+			'penyiapanDL' => $this->input->post('sff'),
+			'tgl_penyiapanDL' => $this->input->post('tgl_sff'),
 			'pengumumanL' => $this->input->post('pgmL'),
 			'tgl_pengumumanL' => $this->input->post('tgl_pgmL'),
 			'pendaftaranL' => $this->input->post('pdfL'),
