@@ -18,7 +18,7 @@
         </div>
         <!-- /.box-header -->
         <!-- form start -->
-        <form role="form" id="formInput" method="post" action="<?php base_url('C_Project/addProject') ?>">
+        <form role="form" id="formInput" method="post" action="<?php base_url('C_Project/addSave') ?>">
           <div class="box-body">
             <div class="form-group">
               <label for="code">Project Code<span class="required">*</span></label>
