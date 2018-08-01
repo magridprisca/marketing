@@ -18,16 +18,10 @@ class C_client extends CI_Controller {
 	}
 
 	public function addClient(){
-		$this->form_validation->set_rules('clientCode', 'client code', 'required');
 		$this->form_validation->set_rules('clientName', 'client name', 'required');
-
-		if($this->form_validation->run() == FALSE){
 			$data['menu']='client';
-			$this->load->view('pages/admin/V_clientForm', $data);
-		}else{
 			$this->M_client->create();
 			redirect(base_url('C_client'));
-		}
 	}
 
 	public function getList(){
@@ -55,4 +49,3 @@ class C_client extends CI_Controller {
 		redirect(base_url('C_client'));
 	}
 }
-?>

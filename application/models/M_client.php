@@ -24,7 +24,6 @@ class M_client extends CI_Model{
 
 	public function create(){
 		$data = array(
-			'client_code' => $this->input->post('clientCode'),
 			'client_name' => $this->input->post('clientName')
 		);
 		return  $this->db->insert('client', $data);
