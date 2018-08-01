@@ -75,7 +75,7 @@
                                               $lelang_persen= $lelang/19 * 100;
                                               ?>
                                               <span class="progress-text">Tahap Lelang</span>
-                                              <span class="progress-number"><b><?= $lelang ?></b>/18</span>
+                                              <span class="progress-number"><b><?= $lelang ?></b>/19</span>
 
                                               <div class="progress sm">
                                                 <div class="progress-bar progress-bar-green" style="width: <?= $lelang_persen ?>%"></div>
@@ -100,7 +100,7 @@
                       </div>
                       <div class="form-group">
                         <label class="control-label col-lg-2">Next Step</span></label>
-                        <label class="control-label col-lg-10">: <?php
+                        <label class="control-label col-lg-10"><?php
                         $i=1;
                         if($process->promosi==0){echo $i.". Promosi (Market Development)<br/>";$i++;}
                         if($process->opsreq==0){echo $i.". Opsreq<br/>";$i++;}

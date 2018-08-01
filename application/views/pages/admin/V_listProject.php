@@ -38,7 +38,7 @@
                       <td><?= $key->pro_code ?></td>
                       <td><?= $key->pro_name ?></td>
                       <td><?= $key->pro_date ?></td>
-                      <td><?= $key->clientID ?></td>
+                      <td><?= $key->client_name ?></td>
                       <td align="center">
                         <div class="btn-group">
                           <?php if ($this->session->userdata('user')){ ?>

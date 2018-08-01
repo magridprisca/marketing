@@ -12,8 +12,7 @@ class C_Project extends CI_Controller {
 		$this->load->library('form_validation');
 	}
 
-	public function index()
-	{
+	public function index(){
 		$data['menu']="project";
 		$data['project']=$this->M_Project->getAll();
 		$this->load->view('pages/admin/V_listProject',$data);
@@ -31,9 +30,9 @@ class C_Project extends CI_Controller {
 		$this->form_validation->set_rules('client', 'client id', 'required');
 		$this->form_validation->set_rules('Note', 'note', 'required');
 
-			$data['menu']='project';
-			$this->M_Project->create();
-			redirect(base_url('C_Project'));
+		$data['menu']='project';
+		$this->M_Project->create();
+		redirect(base_url('C_Project'));
 	}
 	public function remove($code){
 		$this->M_Project->delete();
@@ -84,6 +83,7 @@ class C_Project extends CI_Controller {
 	public function edit($code){
 
 				$data['menu']='project';
+	      $data['client']=$this->M_client->getAll();
 				$data['process']=$this->M_Project->findDetail($code);
 				$this->load->view('pages/admin/V_editProject',$data);
 
