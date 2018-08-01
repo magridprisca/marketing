@@ -93,5 +93,10 @@ class C_Project extends CI_Controller {
 			$data['process']=$this->M_Project->findDetail($code);
 			$this->load->view('pages/admin/V_viewProject',$data);
 	}
+	public function note($code){
+			$data['menu']='project';
+			$data['process']=$this->M_Project->findDetail($code);
+			$this->load->view('pages/admin/V_viewNoteProject',$data);
+	}
 }
 ?>
