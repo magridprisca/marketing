@@ -285,6 +285,7 @@
                         <!-- Buttons -->
                         <div class="col-lg-offset-2 col-lg-9">
                           <button type="submit" class="btn btn-primary">Save</button>
+                          <button type="reset" class="btn btn-primary">Reset</button>
                           <button type="button" class="btn btn-default" onclick="goBack()">Cancel</button>
                         </div>
                       </div>
@@ -298,7 +299,7 @@
 
 
 <script>
-function myClick(num) {
+function myClicka(num) {
     var checkBox = document.getElementById("cek"+num);
     var note = document.getElementById("cnote"+num);
     if (checkBox.checked){

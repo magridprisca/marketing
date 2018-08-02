@@ -23,35 +23,38 @@ class M_Project extends CI_Model{
     return $this->db->insert('project', $data);
   }
   public function update($code){
-		if($this->input->post('mardev')==1){ $tgl_promosi=date('Y-m-d'); } else { $tgl_promosi="0000-00-00"; }
-		if($this->input->post('opsreq')==1){ $tgl_opsreq=date('Y-m-d'); }  else { $tgl_opsreq="0000-00-00"; }
-		if($this->input->post('design')==1){ $tgl_design=date('Y-m-d'); }  else { $tgl_design="0000-00-00"; }
-		if($this->input->post('presentasi')==1){ $tgl_presentasi=date('Y-m-d'); }  else { $tgl_presentasi="0000-00-00"; }
-		if($this->input->post('sourceprice')==1){ $tgl_sourcing_harga=date('Y-m-d'); }  else { $tgl_sourcing_harga="0000-00-00"; }
-		if($this->input->post('sff')==1){ $tgl_penyiapanDL=date('Y-m-d'); }  else { $tgl_penyiapanDL="0000-00-00"; }
-		if($this->input->post('pgmL')==1){ $tgl_pengumumanL=date('Y-m-d'); }  else { $tgl_pengumumanL="0000-00-00"; }
-		if($this->input->post('pdfL')==1){ $tgl_pendaftaranL=date('Y-m-d'); }  else { $tgl_pendaftaranL="0000-00-00"; }
-		if($this->input->post('pmDP')==1){ $tgl_prakualifikasi1=date('Y-m-d'); }  else { $tgl_prakualifikasi1="0000-00-00"; }
-		if($this->input->post('pmbDP')==1){ $tgl_prakualifikasi2=date('Y-m-d'); }  else { $tgl_prakualifikasi2="0000-00-00"; }
-		if($this->input->post('pmbkDP')==1){ $tgl_prakualifikasi3=date('Y-m-d'); }  else { $tgl_prakualifikasi3="0000-00-00"; }
-		if($this->input->post('hasilpraK')==1){ $tgl_prakualifikasi4=date('Y-m-d'); }  else { $tgl_prakualifikasi4="0000-00-00"; }
-		if($this->input->post('pgDL')==1){ $tgl_pengambilanDL=date('Y-m-d'); }  else { $tgl_pengambilanDL="0000-00-00"; }
-		if($this->input->post('aanwizjing')==1){ $tgl_aanwizjing=date('Y-m-d'); }  else { $tgl_aanwizjing="0000-00-00"; }
-		if($this->input->post('pmDPAT')==1){ $tgl_pemasukanD1=date('Y-m-d'); }  else { $tgl_pemasukanD1="0000-00-00"; }
-		if($this->input->post('pmbDPAT')==1){ $tgl_pemasukanD2=date('Y-m-d'); }  else { $tgl_pemasukanD2="0000-00-00"; }
-		if($this->input->post('evalAT')==1){ $tgl_pemasukanD3=date('Y-m-d'); }  else { $tgl_pemasukanD3="0000-00-00"; }
-		if($this->input->post('klarAT')==1){ $tgl_pemasukanD4=date('Y-m-d'); }  else { $tgl_pemasukanD4="0000-00-00"; }
-		if($this->input->post('negoAT')==1){ $tgl_pemasukanD5=date('Y-m-d'); }  else { $tgl_pemasukanD5="0000-00-00"; }
-		if($this->input->post('pengumumanAT')==1){ $tgl_pemasukanD6=date('Y-m-d'); }  else { $tgl_pemasukanD6="0000-00-00"; }
-		if($this->input->post('pemasukanTwr')==1){ $tgl_pemasukanD7=date('Y-m-d'); }  else { $tgl_pemasukanD7="0000-00-00"; }
-		if($this->input->post('evalHarga')==1){ $tgl_pemasukanD8=date('Y-m-d'); }  else { $tgl_pemasukanD8="0000-00-00"; }
-		if($this->input->post('negoHarga')==1){ $tgl_pemasukanD9=date('Y-m-d'); }  else { $tgl_pemasukanD9="0000-00-00"; }
-		if($this->input->post('pengumumanMenang')==1){ $tgl_pemasukanD10=date('Y-m-d'); }  else { $tgl_pemasukanD610="0000-00-00"; }
-		if($this->input->post('tep')==1){ $tgl_tep=date('Y-m-d'); }  else { $tgl_tep="0000-00-00"; }
-		if($this->input->post('SPMK')==1){ $tgl_spmk=date('Y-m-d'); }  else { $tgl_spmk="0000-00-00"; }
-		if($this->input->post('bahasK')==1){ $tgl_pembahasanK=date('Y-m-d'); }  else { $tgl_pembahasanK="0000-00-00"; }
-		if($this->input->post('ttdK')==1){ $tgl_penandatangananK=date('Y-m-d'); }  else { $tgl_penandatangananK="0000-00-00"; }
-		if($this->input->post('efektifK')==1){ $tgl_efektifK=date('Y-m-d'); }  else { $tgl_efektifK="0000-00-00"; }
+    $query = $this->db->where('pro_code',$code)->limit(1)->get('project');
+		foreach($query->result_array() AS $hasil){
+			if($this->input->post('mardev')==$hasil['promosi']){ $tgl_promosi=$hasil['tgl_promosi']; } else { $tgl_promosi=date('Y-m-d'); }
+			if($this->input->post('opsreq')==$hasil['opsreq']){ $tgl_opsreq=$hasil['tgl_opsreq']; }  else { $tgl_opsreq=date('Y-m-d'); }
+			if($this->input->post('design')==$hasil['design']){ $tgl_design=$hasil['tgl_design']; }  else { $tgl_design=date('Y-m-d'); }
+			if($this->input->post('presentasi')==$hasil['presentasi']){ $tgl_presentasi=$hasil['tgl_presentasi']; }  else { $tgl_presentasi=date('Y-m-d'); }
+			if($this->input->post('sourceprice')==$hasil['sourcing_harga']){ $tgl_sourcing_harga=$hasil['tgl_sourcing_harga']; }  else { $tgl_sourcing_harga=date('Y-m-d'); }
+			if($this->input->post('sff')==$hasil['penyiapanDL']){ $tgl_penyiapanDL=$hasil['tgl_penyiapanDL']; }  else { $tgl_penyiapanDL=date('Y-m-d'); }
+			if($this->input->post('pgmL')==$hasil['pengumumanL']){ $tgl_pengumumanL=$hasil['tgl_pengumumanL']; }  else { $tgl_pengumumanL=date('Y-m-d'); }
+			if($this->input->post('pdfL')==$hasil['pendaftaranL']){ $tgl_pendaftaranL=$hasil['tgl_pendaftaranL']; }  else { $tgl_pendaftaranL=date('Y-m-d'); }
+			if($this->input->post('pmDP')==$hasil['prakualifikasi1']){ $tgl_prakualifikasi1=$hasil['tgl_prakualifikasi1']; }  else { $tgl_prakualifikasi1=date('Y-m-d'); }
+			if($this->input->post('pmbDP')==$hasil['prakualifikasi2']){ $tgl_prakualifikasi2=$hasil['tgl_prakualifikasi2']; }  else { $tgl_prakualifikasi2=date('Y-m-d'); }
+			if($this->input->post('pmbkDP')==$hasil['prakualifikasi3']){ $tgl_prakualifikasi3=$hasil['tgl_prakualifikasi3']; }  else { $tgl_prakualifikasi3=date('Y-m-d'); }
+			if($this->input->post('hasilpraK')==$hasil['prakualifikasi4']){ $tgl_prakualifikasi4=$hasil['tgl_prakualifikasi4']; }  else { $tgl_prakualifikasi4=date('Y-m-d'); }
+			if($this->input->post('pgDL')==$hasil['pengambilanDL']){ $tgl_pengambilanDL=$hasil['tgl_pengambilanDL']; }  else { $tgl_pengambilanDL=date('Y-m-d'); }
+			if($this->input->post('aanwizjing')==$hasil['aanwizjing']){ $tgl_aanwizjing=$hasil['tgl_aanwizjing']; }  else { $tgl_aanwizjing=date('Y-m-d'); }
+			if($this->input->post('pmDPAT')==$hasil['pemasukanD1']){ $tgl_pemasukanD1=$hasil['tgl_pemasukanD1']; }  else { $tgl_pemasukanD1=date('Y-m-d'); }
+			if($this->input->post('pmbDPAT')==$hasil['pemasukanD2']){ $tgl_pemasukanD2=$hasil['tgl_pemasukanD2']; }  else { $tgl_pemasukanD2=date('Y-m-d'); }
+			if($this->input->post('evalAT')==$hasil['pemasukanD3']){ $tgl_pemasukanD3=$hasil['tgl_pemasukanD3']; }  else { $tgl_pemasukanD3=date('Y-m-d'); }
+			if($this->input->post('klarAT')==$hasil['pemasukanD4']){ $tgl_pemasukanD4=$hasil['tgl_pemasukanD4']; }  else { $tgl_pemasukanD4=date('Y-m-d'); }
+			if($this->input->post('negoAT')==$hasil['pemasukanD5']){ $tgl_pemasukanD5=$hasil['tgl_pemasukanD5']; }  else { $tgl_pemasukanD5=date('Y-m-d'); }
+			if($this->input->post('pengumumanAT')==$hasil['pemasukanD6']){ $tgl_pemasukanD6=$hasil['tgl_pemasukanD6']; }  else { $tgl_pemasukanD6=date('Y-m-d'); }
+			if($this->input->post('pemasukanTwr')==$hasil['pemasukanD7']){ $tgl_pemasukanD7=$hasil['tgl_pemasukanD7']; }  else { $tgl_pemasukanD7=date('Y-m-d'); }
+			if($this->input->post('evalHarga')==$hasil['pemasukanD8']){ $tgl_pemasukanD8=$hasil['tgl_pemasukanD8']; }  else { $tgl_pemasukanD8=date('Y-m-d'); }
+			if($this->input->post('negoHarga')==$hasil['pemasukanD9']){ $tgl_pemasukanD9=$hasil['tgl_pemasukanD9']; }  else { $tgl_pemasukanD9=date('Y-m-d'); }
+			if($this->input->post('pengumumanMenang')==$hasil['pemasukanD10']){ $tgl_pemasukanD10=$hasil['tgl_pemasukanD10']; }  else { $tgl_pemasukanD610=date('Y-m-d'); }
+			if($this->input->post('tep')==$hasil['tep']){ $tgl_tep=$hasil['tgl_tep']; }  else { $tgl_tep=date('Y-m-d'); }
+			if($this->input->post('SPMK')==$hasil['spmk']){ $tgl_spmk=$hasil['tgl_spmk']; }  else { $tgl_spmk=date('Y-m-d'); }
+			if($this->input->post('bahasK')==$hasil['pembahasanK']){ $tgl_pembahasanK=$hasil['tgl_pembahasanK']; }  else { $tgl_pembahasanK=date('Y-m-d'); }
+			if($this->input->post('ttdK')==$hasil['penandatangananK']){ $tgl_penandatangananK=$hasil['tgl_penandatangananK']; }  else { $tgl_penandatangananK=date('Y-m-d'); }
+			if($this->input->post('efektifK')==$hasil['efektifK']){ $tgl_efektifK=$hasil['tgl_efektifK']; }  else { $tgl_efektifK=date('Y-m-d'); }
+		}
 		$data = array(
 			'clientID' => $this->input->post('client'),
 			'pro_name' => $this->input->post('project'),

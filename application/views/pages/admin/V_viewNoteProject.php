@@ -1,12 +1,12 @@
 <?php $this->load->view('templates/header')?>
 <section class="content-header">
   <h1>
-    Process Project
+    Note Project <?= $process->pro_name ?>
   </h1>
   <ol class="breadcrumb">
     <li><a href="#"><i class="fa fa-universal-access"></i> Home</a></li>
     <li>Project</li>
-    <li class="active">Process Project</li>
+    <li class="active">Note Project</li>
   </ol>
 </section>
 <!-- Main content -->
@@ -61,6 +61,8 @@
               </td>
             </tbody>
           </table>
+
+            <button type="button" class="btn btn-primary" onclick="goBack()">Back</button>
         </div>
       </div>
     </div>
