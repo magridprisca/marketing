@@ -24,6 +24,11 @@ class C_client extends CI_Controller {
 			redirect(base_url('C_client'));
 	}
 
+	public function addClient1(){
+			$this->M_client->create();
+			redirect(base_url('C_Project/addProject'));
+	}
+
 	public function getList(){
 		$data['menu']='client';
 		$data['client']=$this->M_client->getAll();

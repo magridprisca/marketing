@@ -33,14 +33,19 @@
               <input type="date" class="form-control" name="proDate" id="proDate" value="<?= date('Y-m-d')?>" >
             </div>
             <div class="form-group">
-              <label for="clientID">Client</label>
+              <label for="clientID">Client</label><div class="input-group">
               <select class="form-control" name="client" id="client">
                 <option> -- Select Client -- </option>
                 <?php foreach ($client as $c) { ?>
                   <option value="<?= $c->client_code ?>"><?= $c->client_name ?></option>
                 <?php } ?>
               </select>
-            </div>
+              <span class="input-group-btn ">
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-default"><i class="fa fa-plus"></i></button>
+            </span></div>
+          </div>
+
+
             <div class="form-group">
               <label for="note">Add Notes<span class="required">*</span></label>
               <textarea class="form-control" name="Note" id="Note"></textarea>
@@ -57,6 +62,37 @@
     </div>
   </div>
 </section>
+
+<!--Pop-up-->
+<div class="modal fade" id="modal-default">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <form role="form" id="formInput" method="post" action="<?= base_url('C_client/addClient1') ?>">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title">FORM NEW CLIENT</h4>
+        </div>
+        <div class="modal-body">
+          <div class="box-body">
+            <div class="form-group">
+              <label for="name">Name<span class="required">*</span></label>
+              <input class="form-control" id="clientName" name="clientName" placeholder="Client name">
+            </div>
+          </div>
+        </div>
+        <div class="box-footer">
+          <button type="button" id="btnTutup" class="btn btn-default pull-left" data-dismiss="modal" onclick="goBack()">Cancel</button>
+          <button id="btnSimpan" type= "submit" class="btn btn-primary pull-right">Save</button>
+        </div>
+      </form>
+
+    </div>
+    <!-- /.modal-content -->
+  </div>
+  <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
 
 <?php $this->load->view('templates/config/js_main')?>
 <?php $this->load->view('templates/footer')?>
