@@ -1,7 +1,7 @@
 <?php $this->load->view('templates/header')?>
 <section class="content-header">
   <h1>
-    CProject
+    Project
   </h1>
   <ol class="breadcrumb">
     <li><a href="#"><i class="fa fa-universal-access"></i> Home</a></li>
