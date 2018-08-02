@@ -9,8 +9,11 @@ class Dashboard extends CI_Controller {
 
 	public function index(){
 		$data['menu']='home';
-		//$data['project']=$this->M_Project->getcount();
+		$data['project']=$this->M_Project->getcount();
+		$data['projectDone']=$this->M_Project->getcountDone();
+		$data['projectProcess']=$this->M_Project->getcountProcess();
 		$this->load->view('pages/dashboard',$data);
 	}
+
 }
 ?>

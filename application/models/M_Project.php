@@ -152,6 +152,7 @@ class M_Project extends CI_Model{
   public function delete($code){
     $this->db->where('pro_code',$code)->delete('project');
   }
+
   public function findDetail($id){
     $hasil = $this->db->where('project.clientID=client.client_code and pro_code=',$id)->limit(1)->get('project,client');
 		if($hasil->num_rows() > 0){
@@ -160,5 +161,40 @@ class M_Project extends CI_Model{
 			return array();
 		}
   }
+
+	public function getcount(){
+		$this->db->select('COUNT(project.pro_code) AS total');
+    $this->db->from('project');
+   $getData = $this->db->get('');
+  	if($getData->num_rows() > 0){
+    return $getData->row();
+		}else{
+		return null;
+		}
+	}
+
+	public function getcountProcess(){
+		$this->db->select('COUNT(project.pro_code) AS total');
+    $this->db->from('project');
+		$this->db->where('done=0');
+   $getData = $this->db->get('');
+  	if($getData->num_rows() > 0){
+    return $getData->row();
+		}else{
+		return null;
+		}
+	}
+
+	public function getcountDone(){
+		$this->db->select('COUNT(project.pro_code) AS total');
+    $this->db->from('project');
+		$this->db->where('done=1');
+   $getData = $this->db->get('');
+  	if($getData->num_rows() > 0){
+    return $getData->row();
+		}else{
+		return null;
+		}
+	}
 }
 ?>
