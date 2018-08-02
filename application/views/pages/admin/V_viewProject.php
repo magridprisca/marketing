@@ -435,7 +435,7 @@
                       </div>
                       <div class="form-group">
                         <label class="control-label col-lg-2">Note</span></label>
-                        <label class="control-label col-lg-10">: <?= $process->pro_code ?></label>
+                        <label class="control-label col-lg-10">: <?= $process->note ?></label>
                       </div>
                       <!-- Buttons -->
                       <div class="form-group">
