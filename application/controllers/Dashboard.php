@@ -12,6 +12,7 @@ class Dashboard extends CI_Controller {
 		$data['menuu']='project';
 		$data['project']=$this->M_Project->getcount();
 		$data['projectDone']=$this->M_Project->getcountDone();
+		$data['project_on_process']=$this->M_Project->getCountProcess();
 		$data['projectProcess']=$this->M_Project->getcountProcess();
 		$data['thp_praLelang']=$this->M_Project->thpPralelang();
 		$data['thp_praaLelang']=$this->M_Project->thpPraalelang();

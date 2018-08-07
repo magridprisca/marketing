@@ -173,6 +173,16 @@ class M_Project extends CI_Model{
 		}
 	}
 
+	public function getCountProcess(){
+		$query = $this->db->where('pro_code',$code)->limit(1)->get('project');
+		foreach($query->result_array() AS $hasil){
+			if($this->input->post('mardev')==$hasil['promosi']){ $tgl_promosi=$hasil['tgl_promosi']; } else { $on_process=1; }
+			}
+			$data = array(
+				'note' => $this->input->post('note'),
+			);
+	}
+
 	public function getcountProcess(){
 		$this->db->select('COUNT(project.pro_code) AS total');
     $this->db->from('project');
@@ -200,7 +210,7 @@ class M_Project extends CI_Model{
 	public function thpPralelang(){
 		$this->db->select('COUNT(project.promosi) AS tot, COUNT(project.opsreq) AS pro, COUNT(project.design) AS des, COUNT(project.presentasi) AS pre, COUNT(project.sourcing_harga) AS sou, COUNT(project.penyiapanDL) AS pen');
     $this->db->from('project');
-		$this->db->where('promosi=1');
+		$this->db->where('project.on_process', 1);
    	$getData = $this->db->get('');
   	if($getData->num_rows() > 0){
     return $getData->row();
@@ -237,6 +247,7 @@ class M_Project extends CI_Model{
 		COUNT(project.pengambilanDL) AS penga, COUNT(project.aanwizjing) AS aanw,COUNT(project.pemasukanD1) AS pem1, COUNT(project.pemasukanD2) AS pem2, COUNT(project.pemasukanD3) AS pem3, COUNT(project.pemasukanD4) AS pem4,COUNT(project.pemasukanD5) AS pem5,
 		COUNT(project.pemasukanD6) AS pem6, COUNT(project.pemasukanD7) AS pem7, COUNT(project.pemasukanD8) AS pem8, COUNT(project.pemasukanD9) AS pem9, COUNT(project.pemasukanD10) AS pem10, COUNT(project.tep) AS tepp,');
     $this->db->from('project');
+		$this->db->where('project.on_process', 1);
    	$getData = $this->db->get('');
   	if($getData->num_rows() > 0){
     return $getData->row();
@@ -249,12 +260,7 @@ class M_Project extends CI_Model{
 		$this->db->select('COUNT(project.spmk) AS spm, COUNT(project.pembahasanK) AS pemK,
 		COUNT(project.penandatangananK) AS penK, COUNT(project.efektifK) AS efeK');
     $this->db->from('project');
-		$this->db->where('project.spmk', 1);
-		$this->db->where('project.pembahasanK', 1);
-		$this->db->where('project.penandatangananK', 1);
-		$this->db->where('project.efektifK', 1);
-		$this->db->group_by('project.spmk, project.pembahasanK,
-		project.penandatangananK, project.efektifK');
+		$this->db->where('project.on_process', 1);
 		$getData = $this->db->get('');
   	if($getData->num_rows() > 0){
     return $getData->row();
