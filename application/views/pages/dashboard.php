@@ -45,7 +45,6 @@
 
         <!-- fix for small devices only -->
         <div class="clearfix visible-sm-block"></div>
-
         <div class="col-md-4 col-sm-6 col-xs-12">
           <div class="info-box">
             <span class="info-box-icon bg-green"><i class="fa fa-check-circle"></i></span>
@@ -70,10 +69,12 @@
             <div class="box-header with-border">
               <h3 style="text-align: center;">Yearly Recap Report</h3>
                 <div class="col-md-12">
-
                   <div class="progress-group">
                     <span class="progress-text">Progress Tahap Pralelang</span>
-                    <span class="progress-number"><b></b>/6</span>
+                    <span class="progress-number"><b><!--<?= $thp_praLelang->tot+$thp_praLelang->pro+$thp_praLelang->des+
+                    $thp_praLelang->pre+$thp_praLelang->sou+$thp_praLelang->pen ?>--></b>
+                    /<?= $thp_praaLelang->tot+$thp_praaLelang->pro+$thp_praaLelang->des+
+                    $thp_praaLelang->pre+$thp_praaLelang->sou+$thp_praaLelang->pen ?></span>
 
                     <div class="progress sm">
                       <div class="progress-bar progress-bar-aqua" style="width: 80%"></div>
@@ -82,8 +83,12 @@
                   <!-- /.progress-group -->
                   <div class="progress-group">
                     <span class="progress-text">Progress Tahap Lelang</span>
-                    <span class="progress-number"><b></b>/19</span>
-
+                    <span class="progress-number"><b><?=$thp_lelang->totalLelang?></b>
+                      /<?= $thp_leelang->peng+$thp_leelang->pend+$thp_leelang->pra1+$thp_leelang->pra2+
+                      $thp_leelang->pra3+$thp_leelang->pra4+$thp_leelang->penga+$thp_leelang->aanw+
+                      $thp_leelang->pem1+$thp_leelang->pem2+$thp_leelang->pem3+$thp_leelang->pem4+
+                      $thp_leelang->pem5+$thp_leelang->pem6+$thp_leelang->pem7+$thp_leelang->pem8+
+                      $thp_leelang->pem9+$thp_leelang->pem10+$thp_leelang->tepp?></span>
                     <div class="progress sm">
                       <div class="progress-bar progress-bar-red" style="width: 80%"></div>
                     </div>
@@ -91,8 +96,10 @@
                   <!-- /.progress-group -->
                   <div class="progress-group">
                     <span class="progress-text">Progress Tahap Kontrak</span>
-                    <span class="progress-number"><b></b>/6</span>
-
+                    <span class="progress-number"><b><?= $thp_kontrak->spm+$thp_kontrak->pemK+
+                    $thp_kontrak->penK+$thp_kontrak->efeK?></b>
+                      /<?= $thp_koontrak->spm+$thp_koontrak->pemK+
+                      $thp_koontrak->penK+$thp_koontrak->efeK?></span>
                     <div class="progress sm">
                       <div class="progress-bar progress-bar-green" style="width: 80%"></div>
                     </div>

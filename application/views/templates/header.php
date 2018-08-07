@@ -66,11 +66,6 @@
               <a href="<?= base_url('C_Login') ?>"><i class="fa fa-unlock-alt"> Login</i></a>
             </li>
           <?php } ?>
-
-          <!-- Control Sidebar Toggle Button -->
-          <li>
-            <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
-          </li>
         </ul>
       </div>
 

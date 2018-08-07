@@ -189,7 +189,85 @@ class M_Project extends CI_Model{
 		$this->db->select('COUNT(project.pro_code) AS total');
     $this->db->from('project');
 		$this->db->where('done=1');
-   $getData = $this->db->get('');
+   	$getData = $this->db->get('');
+  	if($getData->num_rows() > 0){
+    return $getData->row();
+		}else{
+		return null;
+		}
+	}
+
+	public function thpPralelang(){
+		$this->db->select('COUNT(project.promosi) AS tot, COUNT(project.opsreq) AS pro, COUNT(project.design) AS des, COUNT(project.presentasi) AS pre, COUNT(project.sourcing_harga) AS sou, COUNT(project.penyiapanDL) AS pen');
+    $this->db->from('project');
+		$this->db->where('promosi=1');
+   	$getData = $this->db->get('');
+  	if($getData->num_rows() > 0){
+    return $getData->row();
+		}else{
+		return null;
+		}
+	}
+
+	public function thpPraalelang(){
+		$this->db->select('COUNT(project.promosi) AS tot, COUNT(project.opsreq) AS pro, COUNT(project.design) AS des, COUNT(project.presentasi) AS pre, COUNT(project.sourcing_harga) AS sou, COUNT(project.penyiapanDL) AS pen');
+    $this->db->from('project');
+   	$getData = $this->db->get('');
+  	if($getData->num_rows() > 0){
+    return $getData->row();
+		}else{
+		return null;
+		}
+	}
+
+	public function thpLelang(){
+		$this->db->select('COUNT(project.pro_code) AS totalLelang');
+    $this->db->from('project');
+		$this->db->where('done=1');
+   	$getData = $this->db->get('');
+  	if($getData->num_rows() > 0){
+    return $getData->row();
+		}else{
+		return null;
+		}
+	}
+
+	public function thpLeelang(){
+		$this->db->select('COUNT(project.pengumumanL) AS peng, COUNT(project.pendaftaranL) AS pend, COUNT(project.prakualifikasi1) AS pra1, COUNT(project.prakualifikasi2) AS pra2, COUNT(project.prakualifikasi3) AS pra3, COUNT(project.prakualifikasi4) AS pra4,
+		COUNT(project.pengambilanDL) AS penga, COUNT(project.aanwizjing) AS aanw,COUNT(project.pemasukanD1) AS pem1, COUNT(project.pemasukanD2) AS pem2, COUNT(project.pemasukanD3) AS pem3, COUNT(project.pemasukanD4) AS pem4,COUNT(project.pemasukanD5) AS pem5,
+		COUNT(project.pemasukanD6) AS pem6, COUNT(project.pemasukanD7) AS pem7, COUNT(project.pemasukanD8) AS pem8, COUNT(project.pemasukanD9) AS pem9, COUNT(project.pemasukanD10) AS pem10, COUNT(project.tep) AS tepp,');
+    $this->db->from('project');
+   	$getData = $this->db->get('');
+  	if($getData->num_rows() > 0){
+    return $getData->row();
+		}else{
+		return null;
+		}
+	}
+
+	public function thpKontrak(){
+		$this->db->select('COUNT(project.spmk) AS spm, COUNT(project.pembahasanK) AS pemK,
+		COUNT(project.penandatangananK) AS penK, COUNT(project.efektifK) AS efeK');
+    $this->db->from('project');
+		$this->db->where('project.spmk', 1);
+		$this->db->where('project.pembahasanK', 1);
+		$this->db->where('project.penandatangananK', 1);
+		$this->db->where('project.efektifK', 1);
+		$this->db->group_by('project.spmk, project.pembahasanK,
+		project.penandatangananK, project.efektifK');
+		$getData = $this->db->get('');
+  	if($getData->num_rows() > 0){
+    return $getData->row();
+		}else{
+		return null;
+		}
+	}
+
+	public function thpKoontrak(){
+		$this->db->select('COUNT(project.spmk) AS spm, COUNT(project.pembahasanK) AS pemK,
+		COUNT(project.penandatangananK) AS penK, COUNT(project.efektifK) AS efeK');
+    $this->db->from('project');
+   	$getData = $this->db->get('');
   	if($getData->num_rows() > 0){
     return $getData->row();
 		}else{
