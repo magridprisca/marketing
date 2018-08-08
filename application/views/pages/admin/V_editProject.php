@@ -267,7 +267,7 @@
                               <td>29</td>
                               <td colspan="2">Efektif Kontrak</td>
                               <td align="center"><input type="checkbox" name="efektifK" id="cek29" <?php if($process->efektifK==1){echo "checked";} ?> value="1" onclick="myClick(29)"></input></td>
-                              <td><textarea name="note29" class="form-control" rows="1" cols="50" id="cnote29" <?php if($process->efektifK==0){echo "disabled";} ?>><?= $process->note29 ?></textarea></td>
+                              <td><textarea name="note29" class="form-control" rows="1" cols="50" id="cnote29"><?= $process->note29 ?></textarea></td>
                             </tr>
                           </tbody>
                         </table>
@@ -278,6 +278,12 @@
                         <label class="control-label col-lg-2" for="note">Note</label>
                         <div class="col-lg-10">
                           <textarea class="form-control" name="Note" id="Note"><?= $process->note ?></textarea>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="control-label col-lg-2" for="done">Project Is Done </label>
+                        <div class="col-lg-10">
+                          <input type="checkbox" name="done" <?php if($process->done==1){echo "checked";} ?> value="1"> yes</input>
                         </div>
                       </div>
                       <!-- Buttons --><br>

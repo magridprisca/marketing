@@ -146,6 +146,7 @@ class M_Project extends CI_Model{
 			'note28' => $this->input->post('note28'),
 			'note29' => $this->input->post('note29'),
 			'note' => $this->input->post('note'),
+			'done' => $this->input->post('done')
 		);
     $this->db->where('pro_code',$code)->update('project',$data);
   }
@@ -174,16 +175,6 @@ class M_Project extends CI_Model{
 	}
 
 	public function getCountProcess(){
-		$query = $this->db->where('pro_code',$code)->limit(1)->get('project');
-		foreach($query->result_array() AS $hasil){
-			if($this->input->post('mardev')==$hasil['promosi']){ $tgl_promosi=$hasil['tgl_promosi']; } else { $on_process=1; }
-			}
-			$data = array(
-				'note' => $this->input->post('note'),
-			);
-	}
-
-	public function getcountProcess(){
 		$this->db->select('COUNT(project.pro_code) AS total');
     $this->db->from('project');
 		$this->db->where('done=0');
@@ -208,9 +199,8 @@ class M_Project extends CI_Model{
 	}
 
 	public function thpPralelang(){
-		$this->db->select('COUNT(project.promosi) AS tot, COUNT(project.opsreq) AS pro, COUNT(project.design) AS des, COUNT(project.presentasi) AS pre, COUNT(project.sourcing_harga) AS sou, COUNT(project.penyiapanDL) AS pen');
+		$this->db->select('SUM(project.promosi) AS tot, SUM(project.opsreq) AS pro, SUM(project.design) AS des, SUM(project.presentasi) AS pre, SUM(project.sourcing_harga) AS sou, SUM(project.penyiapanDL) AS pen');
     $this->db->from('project');
-		$this->db->where('project.on_process', 1);
    	$getData = $this->db->get('');
   	if($getData->num_rows() > 0){
     return $getData->row();
@@ -219,35 +209,12 @@ class M_Project extends CI_Model{
 		}
 	}
 
-	public function thpPraalelang(){
-		$this->db->select('COUNT(project.promosi) AS tot, COUNT(project.opsreq) AS pro, COUNT(project.design) AS des, COUNT(project.presentasi) AS pre, COUNT(project.sourcing_harga) AS sou, COUNT(project.penyiapanDL) AS pen');
-    $this->db->from('project');
-   	$getData = $this->db->get('');
-  	if($getData->num_rows() > 0){
-    return $getData->row();
-		}else{
-		return null;
-		}
-	}
 
 	public function thpLelang(){
-		$this->db->select('COUNT(project.pro_code) AS totalLelang');
+		$this->db->select('SUM(project.pengumumanL) AS peng, SUM(project.pendaftaranL) AS pend, SUM(project.prakualifikasi1) AS pra1, SUM(project.prakualifikasi2) AS pra2, SUM(project.prakualifikasi3) AS pra3, SUM(project.prakualifikasi4) AS pra4,
+		SUM(project.pengambilanDL) AS penga, SUM(project.aanwizjing) AS aanw,SUM(project.pemasukanD1) AS pem1, SUM(project.pemasukanD2) AS pem2, SUM(project.pemasukanD3) AS pem3, SUM(project.pemasukanD4) AS pem4,SUM(project.pemasukanD5) AS pem5,
+		SUM(project.pemasukanD6) AS pem6, SUM(project.pemasukanD7) AS pem7, SUM(project.pemasukanD8) AS pem8, SUM(project.pemasukanD9) AS pem9, SUM(project.pemasukanD10) AS pem10, SUM(project.tep) AS tepp,');
     $this->db->from('project');
-		$this->db->where('done=1');
-   	$getData = $this->db->get('');
-  	if($getData->num_rows() > 0){
-    return $getData->row();
-		}else{
-		return null;
-		}
-	}
-
-	public function thpLeelang(){
-		$this->db->select('COUNT(project.pengumumanL) AS peng, COUNT(project.pendaftaranL) AS pend, COUNT(project.prakualifikasi1) AS pra1, COUNT(project.prakualifikasi2) AS pra2, COUNT(project.prakualifikasi3) AS pra3, COUNT(project.prakualifikasi4) AS pra4,
-		COUNT(project.pengambilanDL) AS penga, COUNT(project.aanwizjing) AS aanw,COUNT(project.pemasukanD1) AS pem1, COUNT(project.pemasukanD2) AS pem2, COUNT(project.pemasukanD3) AS pem3, COUNT(project.pemasukanD4) AS pem4,COUNT(project.pemasukanD5) AS pem5,
-		COUNT(project.pemasukanD6) AS pem6, COUNT(project.pemasukanD7) AS pem7, COUNT(project.pemasukanD8) AS pem8, COUNT(project.pemasukanD9) AS pem9, COUNT(project.pemasukanD10) AS pem10, COUNT(project.tep) AS tepp,');
-    $this->db->from('project');
-		$this->db->where('project.on_process', 1);
    	$getData = $this->db->get('');
   	if($getData->num_rows() > 0){
     return $getData->row();
@@ -257,10 +224,9 @@ class M_Project extends CI_Model{
 	}
 
 	public function thpKontrak(){
-		$this->db->select('COUNT(project.spmk) AS spm, COUNT(project.pembahasanK) AS pemK,
-		COUNT(project.penandatangananK) AS penK, COUNT(project.efektifK) AS efeK');
+		$this->db->select('SUM(project.spmk) AS spm, SUM(project.pembahasanK) AS pemK,
+		SUM(project.penandatangananK) AS penK, SUM(project.efektifK) AS efeK');
     $this->db->from('project');
-		$this->db->where('project.on_process', 1);
 		$getData = $this->db->get('');
   	if($getData->num_rows() > 0){
     return $getData->row();
@@ -269,16 +235,5 @@ class M_Project extends CI_Model{
 		}
 	}
 
-	public function thpKoontrak(){
-		$this->db->select('COUNT(project.spmk) AS spm, COUNT(project.pembahasanK) AS pemK,
-		COUNT(project.penandatangananK) AS penK, COUNT(project.efektifK) AS efeK');
-    $this->db->from('project');
-   	$getData = $this->db->get('');
-  	if($getData->num_rows() > 0){
-    return $getData->row();
-		}else{
-		return null;
-		}
-	}
 }
 ?>

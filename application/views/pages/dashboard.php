@@ -73,15 +73,13 @@
                     <span class="progress-text">Progress Tahap Pralelang</span>
                     <span class="progress-number">
                       <b>
-                        <?= $project_on_process->getCountProcess?>
-                        <?= $thp_praLelang->tot+$thp_praLelang->pro+$thp_praLelang->des+
+                        <?= $total_pralelang = $thp_praLelang->tot+$thp_praLelang->pro+$thp_praLelang->des+
                             $thp_praLelang->pre+$thp_praLelang->sou+$thp_praLelang->pen ?>
                       </b>
-                        /<?= $thp_praaLelang->tot+$thp_praaLelang->pro+$thp_praaLelang->des+
-                            $thp_praaLelang->pre+$thp_praaLelang->sou+$thp_praaLelang->pen ?>
+                        /<?= $project->total*6 ?>
                     </span>
                     <div class="progress sm">
-                      <div class="progress-bar progress-bar-aqua" style="width: 80%"></div>
+                      <div class="progress-bar progress-bar-aqua" style="width: <?= $total_pralelang/($project->total*6)*100 ?>%"></div>
                     </div>
                   </div>
                   <!-- /.progress-group -->
@@ -89,17 +87,16 @@
                     <span class="progress-text">Progress Tahap Lelang</span>
                     <span class="progress-number">
                       <b>
-                        <?= $project_on_process->getCountProcess?>
-                        <?=$thp_lelang->totalLelang?>
+                        <?= $totalLelang = $thp_lelang->peng+$thp_lelang->pend+$thp_lelang->pra1+$thp_lelang->pra2+
+                            $thp_lelang->pra3+$thp_lelang->pra4+$thp_lelang->penga+$thp_lelang->aanw+
+                            $thp_lelang->pem1+$thp_lelang->pem2+$thp_lelang->pem3+$thp_lelang->pem4+
+                            $thp_lelang->pem5+$thp_lelang->pem6+$thp_lelang->pem7+$thp_lelang->pem8+
+                            $thp_lelang->pem9+$thp_lelang->pem10+$thp_lelang->tepp?>
                       </b>
-                        /<?= $thp_leelang->peng+$thp_leelang->pend+$thp_leelang->pra1+$thp_leelang->pra2+
-                            $thp_leelang->pra3+$thp_leelang->pra4+$thp_leelang->penga+$thp_leelang->aanw+
-                            $thp_leelang->pem1+$thp_leelang->pem2+$thp_leelang->pem3+$thp_leelang->pem4+
-                            $thp_leelang->pem5+$thp_leelang->pem6+$thp_leelang->pem7+$thp_leelang->pem8+
-                            $thp_leelang->pem9+$thp_leelang->pem10+$thp_leelang->tepp?>
+                        /<?= $project->total*19 ?>
                     </span>
                     <div class="progress sm">
-                      <div class="progress-bar progress-bar-red" style="width: 80%"></div>
+                      <div class="progress-bar progress-bar-red" style="width: <?= $totalLelang/($project->total*19)*100 ?>%"></div>
                     </div>
                   </div>
                   <!-- /.progress-group -->
@@ -107,15 +104,13 @@
                     <span class="progress-text">Progress Tahap Kontrak</span>
                     <span class="progress-number">
                       <b>
-                        <?= $project_on_process->getCountProcess?>
-                        <?= $thp_kontrak->spm+$thp_kontrak->pemK+
+                        <?= $totalKontrak = $thp_kontrak->spm+$thp_kontrak->pemK+
                             $thp_kontrak->penK+$thp_kontrak->efeK?>
                       </b>
-                        /<?= $thp_koontrak->spm+$thp_koontrak->pemK+
-                            $thp_koontrak->penK+$thp_koontrak->efeK?>
+                        /<?= $project->total*4 ?>
                     </span>
                     <div class="progress sm">
-                      <div class="progress-bar progress-bar-green" style="width: 80%"></div>
+                      <div class="progress-bar progress-bar-green" style="width: <?= $totalKontrak/($project->total*4)*100 ?>%"></div>
                     </div>
                   </div>
                 </div>
