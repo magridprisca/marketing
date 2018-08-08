@@ -42,7 +42,9 @@
                       <td align="center">
                         <div class="btn-group">
                           <?php if ($this->session->userdata('user')){ ?>
-                            <a class="btn btn-info" href="<?= base_url('C_Project/edit/'.$key->pro_code)?>"><i class="fa fa-edit"> Edit</i></a>
+                            <?php if($key->done==0){ ?>
+                              <a class="btn btn-info" href="<?= base_url('C_Project/edit/'.$key->pro_code)?>"><i class="fa fa-edit"> Edit</i></a>
+                            <?php } ?>
                             <a class="btn btn-warning" href="<?= base_url('C_Project/excel/'.$key->pro_code)?>"><i class="fa fa-print"> Print Excel</i></a>
                           <?php } ?>
                           <a class="btn btn-success" href="<?= base_url('C_Project/view/'.$key->pro_code)?>"><i class="fa fa-eye"> View </i></a>

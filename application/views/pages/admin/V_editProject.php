@@ -280,12 +280,14 @@
                           <textarea class="form-control" name="Note" id="Note"><?= $process->note ?></textarea>
                         </div>
                       </div>
-                      <div class="form-group">
-                        <label class="control-label col-lg-2" for="done">Project Is Done </label>
-                        <div class="col-lg-10">
-                          <input type="checkbox" name="done" <?php if($process->done==1){echo "checked";} ?> value="1"> yes</input>
+                      <?php if($process->efektifK==1){ ?>
+                        <div class="form-group">
+                          <label class="control-label col-lg-2" for="done">Project Is Done </label>
+                          <div class="col-lg-10">
+                            <input type="checkbox" name="done" <?php if($process->done==1){echo "checked";} ?> value="1"> yes</input>
+                          </div>
                         </div>
-                      </div>
+                      <?php } ?>
                       <!-- Buttons --><br>
                       <div class="form-group">
                         <!-- Buttons -->
