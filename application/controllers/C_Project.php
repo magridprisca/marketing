@@ -5,8 +5,7 @@ class C_Project extends CI_Controller {
 	public function __construct(){
 		parent::__construct();
     $this->load->model('M_Project');
-		$this->load->model('M_Process');
-		$this->load->model('M_client');
+		$this->load->model('M_Client');
 		$this->load->helper('url_helper');
 		$this->load->helper(array('form', 'url'));
 		$this->load->library('form_validation');
@@ -20,7 +19,7 @@ class C_Project extends CI_Controller {
 
 	public function addProject(){
 			$data['menu']='project';
-      $data['client']=$this->M_client->getAll();
+      $data['client']=$this->M_Client->getAll();
 			$this->load->view('pages/admin/V_projectForm',$data);
 	}
 	public function addSave(){
@@ -83,7 +82,7 @@ class C_Project extends CI_Controller {
 	public function edit($code){
 
 				$data['menu']='project';
-	      $data['client']=$this->M_client->getAll();
+	      $data['client']=$this->M_Client->getAll();
 				$data['process']=$this->M_Project->findDetail($code);
 				$this->load->view('pages/admin/V_editProject',$data);
 	}

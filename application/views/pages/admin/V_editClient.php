@@ -17,7 +17,7 @@
           </div>
           <!-- /.box-header -->
           <!-- form start -->
-          <form role="form" id="formInput" method="post" action="<?= base_url('C_client/editClient/'.$client->client_code) ?>">
+          <form role="form" id="formInput" method="post" action="<?= base_url('C_Client/editClient/'.$client->client_code) ?>">
             <div class="box-body">
               <div class="form-group">
                 <label for="code">Client code<span class="required">*</span></label>

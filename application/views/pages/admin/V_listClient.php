@@ -39,8 +39,8 @@
                 <td align="center" style="border: 0.5px solid grey">
                   <div class="btn-group">
                     <?php if ($this->session->userdata('user')){ ?>
-                    <a class="btn btn-info" href="<?= base_url('C_client/editClient/'.$key->client_code)?>"><i class="fa fa-edit"> Edit</i></a>
-                    <a class="btn btn-danger" href="<?= base_url('C_client/remove/'.$key->client_code)?>"><i class="fa fa-remove"> Remove</i></a>
+                    <a class="btn btn-info" href="<?= base_url('C_Client/editClient/'.$key->client_code)?>"><i class="fa fa-edit"> Edit</i></a>
+                    <a class="btn btn-danger" href="<?= base_url('C_Client/remove/'.$key->client_code)?>"><i class="fa fa-remove"> Remove</i></a>
                     <?php } ?>
                   </div>
                 </td>
@@ -61,7 +61,7 @@
 <div class="modal fade" id="modal-default">
   <div class="modal-dialog">
     <div class="modal-content">
-      <form role="form" id="formInput" method="post" action="<?= base_url('C_client/addClient') ?>">
+      <form role="form" id="formInput" method="post" action="<?= base_url('C_Client/addClient') ?>">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span></button>

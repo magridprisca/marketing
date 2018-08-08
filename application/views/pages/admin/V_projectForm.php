@@ -67,7 +67,7 @@
 <div class="modal fade" id="modal-default">
   <div class="modal-dialog">
     <div class="modal-content">
-      <form role="form" id="formInput" method="post" action="<?= base_url('C_client/addClient1') ?>">
+      <form role="form" id="formInput" method="post" action="<?= base_url('C_Client/addClient1') ?>">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span></button>

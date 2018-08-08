@@ -1,5 +1,5 @@
 <?php
-class M_Process extends CI_Model{
+class M_cek extends CI_Model{
 	public function __construct(){
 		$this->load->database();
 	}

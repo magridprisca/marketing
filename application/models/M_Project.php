@@ -48,7 +48,7 @@ class M_Project extends CI_Model{
 			if($this->input->post('pemasukanTwr')==$hasil['pemasukanD7']){ $tgl_pemasukanD7=$hasil['tgl_pemasukanD7']; }  else { $tgl_pemasukanD7=date('Y-m-d'); }
 			if($this->input->post('evalHarga')==$hasil['pemasukanD8']){ $tgl_pemasukanD8=$hasil['tgl_pemasukanD8']; }  else { $tgl_pemasukanD8=date('Y-m-d'); }
 			if($this->input->post('negoHarga')==$hasil['pemasukanD9']){ $tgl_pemasukanD9=$hasil['tgl_pemasukanD9']; }  else { $tgl_pemasukanD9=date('Y-m-d'); }
-			if($this->input->post('pengumumanMenang')==$hasil['pemasukanD10']){ $tgl_pemasukanD10=$hasil['tgl_pemasukanD10']; }  else { $tgl_pemasukanD610=date('Y-m-d'); }
+			if($this->input->post('pengumumanMenang')==$hasil['pemasukanD10']){ $tgl_pemasukanD10=$hasil['tgl_pemasukanD10']; }  else { $tgl_pemasukanD10=date('Y-m-d'); }
 			if($this->input->post('tep')==$hasil['tep']){ $tgl_tep=$hasil['tgl_tep']; }  else { $tgl_tep=date('Y-m-d'); }
 			if($this->input->post('SPMK')==$hasil['spmk']){ $tgl_spmk=$hasil['tgl_spmk']; }  else { $tgl_spmk=date('Y-m-d'); }
 			if($this->input->post('bahasK')==$hasil['pembahasanK']){ $tgl_pembahasanK=$hasil['tgl_pembahasanK']; }  else { $tgl_pembahasanK=date('Y-m-d'); }

@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class C_Login extends CI_Controller {
   public function __construct(){
 		parent::__construct();
-		$this->load->model('M_user');
+		$this->load->model('M_User');
 	}
 
 	public function index(){
@@ -15,9 +15,9 @@ class C_Login extends CI_Controller {
   public function aksi_login(){
 		$username = $this->input->post('user');
 		$password = md5($this->input->post('pass'));
-		$isLogin = $this->M_user->login_authen($username, $password);
+		$isLogin = $this->M_User->login_authen($username, $password);
 
-		$i = $this->M_user->authen_user($username);
+		$i = $this->M_User->authen_user($username);
 
 		if ($isLogin == true && $i[0]['authentication'] < 3) {
 			$newdata = array(
@@ -27,12 +27,12 @@ class C_Login extends CI_Controller {
 			'status'	=> 'Login'
 			);
 			$this->session->set_userdata($newdata);
-			$this->M_user->wrong_password($username, 0);
+			$this->M_User->wrong_password($username, 0);
 			redirect(base_url());
 		}
 		else{
 			if ($i[0]['authentication'] < 3) {
-				$update = $this->M_user->wrong_password($username, $i[0]['authentication']+1);
+				$update = $this->M_User->wrong_password($username, $i[0]['authentication']+1);
 				$data['err_message'] = "GAGAL LOGIN " . ($i[0]['authentication']+1);
 				$this->load->view('pages/V_login', $data);
 			}

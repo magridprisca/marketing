@@ -1,5 +1,5 @@
 <?php
-class M_user extends CI_Model{
+class M_User extends CI_Model{
 	public function __construct(){
 		$this->load->database();
 	}
