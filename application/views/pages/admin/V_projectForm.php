@@ -22,15 +22,15 @@
           <div class="box-body">
             <div class="form-group">
               <label for="code">Project Code<span class="required">*</span></label>
-              <input type="text" class="form-control" name="proCode" id="proCode" placeholder="Code">
+              <input type="text" class="form-control" name="proCode" id="proCode" placeholder="Code" required>
             </div>
             <div class="form-group">
               <label for="project">Project Name<span class="required">*</span></label>
-              <input type="text" class="form-control" name="proName" id="proName" placeholder="Name">
+              <input type="text" class="form-control" name="proName" id="proName" placeholder="Name" required>
             </div>
             <div class="form-group">
               <label for="date">Date<span class="required">*</span></label>
-              <input type="date" class="form-control" name="proDate" id="proDate" value="<?= date('Y-m-d')?>" >
+              <input type="date" class="form-control" name="proDate" id="proDate" value="<?= date('Y-m-d')?>" required>
             </div>
             <div class="form-group">
               <label for="clientID">Client</label><div class="input-group">

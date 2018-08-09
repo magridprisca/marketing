@@ -277,7 +277,7 @@
                       <div class="form-group">
                         <label class="control-label col-lg-2" for="note">Note</label>
                         <div class="col-lg-10">
-                          <textarea class="form-control" name="Note" id="Note"><?= $process->note ?></textarea>
+                          <textarea class="form-control" name="note" id="note"><?= $process->note ?></textarea>
                         </div>
                       </div>
                       <?php if($process->efektifK==1){ ?>
