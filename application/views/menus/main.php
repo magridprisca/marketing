@@ -15,8 +15,3 @@
     <li class="menu-open  <?php if($menu=='project'){echo "active";}?>"><a href="<?= base_url('C_Project');?>"><i class="fa fa-circle-o"></i> Process Project</a></li>
   </ul>
 </li>
-<li class="menu-open <?php if($menu=='client'){echo "active";}?>">
-  <a href="<?= base_url('C_Client/getList');?>">
-    <i class="fa fa-handshake-o"></i> <span>Client</span>
-  </a>
-</li>
