@@ -19,9 +19,12 @@
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100">
-				<div class="text-center p-t-136">
-						<?= $err_message ?>
-				</div>
+				<?php $msg = $this->session->flashdata('error');?>
+					<?php if ($msg):?>
+						<div class="alert alert-error" style="text-align:center">
+							<?= $err_message ?>
+						</div>
+					<?php endif?>
 
 				<div class="login100-pic js-tilt" data-tilt>
 					<img src="<?= base_url(); ?>assets/login/images/img-01.png" alt="IMG">
@@ -55,13 +58,11 @@
 					</div>
 
 					<div class="text-center p-t-12">
-						<span class="txt1">
-							Forgot
-						</span>
-						<a class="txt2" href="#">
-							Username / Password?
+						<a class="txt2" href="<?= base_url() ?>">
+							<i class="fa fa-chevron-left"> BACK</i>
 						</a>
 					</div>
+
 
 					<div class="text-center p-t-136">
 							Create Account : Call IT Division
@@ -82,6 +83,7 @@
 		})
 	</script>
 	<script src="<?= base_url(); ?>assets/login/js/main.js"></script>
+	<?php $this->load->view('templates/config/js_main')?>
 
 </body>
 </html>

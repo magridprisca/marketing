@@ -34,7 +34,7 @@ class C_Project extends CI_Controller {
 		redirect(base_url('C_Project'));
 	}
 	public function remove($code){
-		$this->M_Project->delete();
+		$this->M_Project->delete($code);
 		redirect(base_url('C_Project'));
 	}
 	public function detail($code){

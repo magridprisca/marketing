@@ -442,7 +442,7 @@
                         <!-- Buttons -->
                         <div class="col-lg-12 center-block">
                           <button type="button" class="btn btn-primary" onclick="goBack()">Back</button>
-                          <a href="<?= base_url('C_Project/note/'.$process->pro_code) ?>"><button type="button" class="btn btn-primary">View All Notes</button></a>
+                          <a href="<?= base_url('C_Project/note/'.$process->id_project) ?>"><button type="button" class="btn btn-primary">View All Notes</button></a>
                         </div>
                       </div>
                   </div>

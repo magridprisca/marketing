@@ -19,7 +19,7 @@
 <!-- Process -->
                   <div class="form quick-post">
                     <!-- Edit profile form (not working)-->
-                    <form class="form-horizontal" role="form" id="formInput" method="post" action="<?= base_url('C_Project/editproses/'.$process->pro_code) ?>">
+                    <form class="form-horizontal" role="form" id="formInput" method="post" action="<?= base_url('C_Project/editproses/'.$process->id_project) ?>">
                       <!-- Project ID -->
                       <div class="form-group">
                         <label class="control-label col-lg-2" for="projectid">Project ID</label>
@@ -291,10 +291,13 @@
                       <!-- Buttons --><br>
                       <div class="form-group">
                         <!-- Buttons -->
-                        <div class="col-lg-offset-2 col-lg-9">
+                        <div class="col-lg-offset-2 col-lg-8">
                           <button type="submit" class="btn btn-primary">Save</button>
                           <button type="reset" class="btn btn-primary">Reset</button>
                           <button type="button" class="btn btn-default" onclick="goBack()">Cancel</button>
+                        </div>
+                        <div class="col-lg-2">
+                          <a href="<?= base_url('C_Project/remove/'.$process->id_project) ?>"><button type="button" class="btn btn-danger"><i class="fa fa-trash"></i> Delete Project</button></a>
                         </div>
                       </div>
                     </form>

@@ -19,28 +19,34 @@ class C_Login extends CI_Controller {
 
 		$i = $this->M_User->authen_user($username);
 
-		if ($isLogin == true && $i[0]['authentication'] < 3) {
-			$newdata = array(
-			'user'	=> $i[0]['username'],
-			'nama'	=> $i[0]['name'],
-      'email'	=> $i[0]['email'],
-			'status'	=> 'Login'
-			);
-			$this->session->set_userdata($newdata);
-			$this->M_User->wrong_password($username, 0);
-			redirect(base_url());
-		}
-		else{
-			if ($i[0]['authentication'] < 3) {
-				$update = $this->M_User->wrong_password($username, $i[0]['authentication']+1);
-				$data['err_message'] = "GAGAL LOGIN " . ($i[0]['authentication']+1);
-				$this->load->view('pages/V_login', $data);
-			}
-			else{
-				$data['err_message'] = "AKUN ANDA TERBLOCK";
-				$this->load->view('pages/V_login', $data);
-			}
-		}
+		if ($isLogin == true){
+      if($i[0]['authentication'] < 3) {
+  			$newdata = array(
+  			'user'	=> $i[0]['username'],
+  			'nama'	=> $i[0]['name'],
+        'email'	=> $i[0]['email'],
+  			'status'	=> 'Login'
+  			);
+  			$this->session->set_userdata($newdata);
+  			$this->M_User->wrong_password($username, 0);
+  			redirect(base_url());
+  		}
+  		else{
+  			if ($i[0]['authentication'] < 3) {
+  				$update = $this->M_User->wrong_password($username, $i[0]['authentication']+1);
+  				$data['err_message'] = "GAGAL LOGIN " . ($i[0]['authentication']+1);
+  				$this->load->view('pages/V_login', $data);
+  			}
+  			else{
+  				$data['err_message'] = "AKUN ANDA TERBLOCK";
+  				$this->load->view('pages/V_login', $data);
+  			}
+  		}
+    }else{
+			  $this->session->set_flashdata('error', true);
+        $data['err_message'] = "Username atau Password Salah";
+    		$this->load->view('pages/V_login',$data);
+    }
 	}
 
 	public function logout(){

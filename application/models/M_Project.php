@@ -23,7 +23,7 @@ class M_Project extends CI_Model{
     return $this->db->insert('project', $data);
   }
   public function update($code){
-    $query = $this->db->where('pro_code',$code)->limit(1)->get('project');
+    $query = $this->db->where('id_project',$code)->limit(1)->get('project');
 		foreach($query->result_array() AS $hasil){
 			if($this->input->post('mardev')==$hasil['promosi']){ $tgl_promosi=$hasil['tgl_promosi']; } else { $tgl_promosi=date('Y-m-d'); }
 			if($this->input->post('opsreq')==$hasil['opsreq']){ $tgl_opsreq=$hasil['tgl_opsreq']; }  else { $tgl_opsreq=date('Y-m-d'); }
@@ -148,14 +148,14 @@ class M_Project extends CI_Model{
 			'note' => $this->input->post('note'),
 			'done' => $this->input->post('done')
 		);
-    $this->db->where('pro_code',$code)->update('project',$data);
+    $this->db->where('id_project',$code)->update('project',$data);
   }
   public function delete($code){
-    $this->db->where('pro_code',$code)->delete('project');
+    $this->db->where('id_project',$code)->delete('project');
   }
 
   public function findDetail($id){
-    $hasil = $this->db->where('project.clientID=client.client_code and pro_code=',$id)->limit(1)->get('project,client');
+    $hasil = $this->db->where('project.clientID=client.client_code and id_project=',$id)->limit(1)->get('project,client');
 		if($hasil->num_rows() > 0){
 			return $hasil->row();
 		}else {
@@ -164,7 +164,7 @@ class M_Project extends CI_Model{
   }
 
 	public function getcount(){
-		$this->db->select('COUNT(project.pro_code) AS total');
+		$this->db->select('COUNT(project.id_project) AS total');
     $this->db->from('project');
    $getData = $this->db->get('');
   	if($getData->num_rows() > 0){
@@ -175,7 +175,7 @@ class M_Project extends CI_Model{
 	}
 
 	public function getCountProcess(){
-		$this->db->select('COUNT(project.pro_code) AS total');
+		$this->db->select('COUNT(project.id_project) AS total');
     $this->db->from('project');
 		$this->db->where('done=0');
    $getData = $this->db->get('');
@@ -187,7 +187,7 @@ class M_Project extends CI_Model{
 	}
 
 	public function getcountDone(){
-		$this->db->select('COUNT(project.pro_code) AS total');
+		$this->db->select('COUNT(project.id_project) AS total');
     $this->db->from('project');
 		$this->db->where('done=1');
    	$getData = $this->db->get('');
